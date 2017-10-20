@@ -1,0 +1,25 @@
+<module>
+  <rawname>sms</rawname>
+  <name>SMS</name>
+  <publisher>Sangoma Technologies Corporation</publisher>
+  <license>Commercial</license>
+  <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+  <repo>standard</repo>
+  <category>Connectivity</category>
+  <version>14.0.1.1</version>
+  <description>
+    This module is used to configure and manage SMS chat interfaces inside of the new UCP.
+  </description>
+	<changelog>
+		*14.0.1.1* Minor errors
+		*14.0.1* Work in UCP 14
+  </changelog>
+  <depends>
+    <engine>asterisk 11</engine>
+    <module>ucp ge 13.0.34</module>
+    <version>13.0.128</version>
+  </depends>
+  <supported>
+    <version>14.0</version>
+  </supported>
+</module>

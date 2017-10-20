@@ -1,0 +1,207 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+;################################################
+;#        FreePBX Module Signature File         #
+;################################################
+;# Do not alter the contents of this file!  If  #
+;# this file is tampered with, the module will  #
+;# fail validation and be marked as invalid!    #
+;################################################
+
+[config]
+version=1
+hash=sha256
+signedwith=86CE877469D2EAD9
+signedby='FreePBX Mirror 1 (Module Signing - 2014/2015) <security@freepbx.org>'
+repo=commercial
+timestamp=1500920908.2611
+[hashes]
+Console/Sysadmin.class.php = 5f88db65e4ed41a698f5f2d0e25bb5ddede499de8f4d517b6997ef6a04ddea2f
+Dhcpd.class.php = 4a8a02686a1ce24d2715b95c57f6961580c97b572673864bccbb337211b20a7a
+Endofline/Sysadmin.class.php = 188ec1c639e2344952979c8f6e7b2c334e384549be4fba4270336a00489d52a2
+LICENSE = fb789a3af5d433b44678088fa3b1994ad7c0b867568626a9d8be4c04bd3f1d61
+Network.class.php = 5a902861089709d3e2bef463c59731ddcad545124bf4b3a095e996834683a6b8
+Oobe.class.php = 7b7ed0c2a2faf9a6a5ce1e58f2a0f8c91c9a004c15dffe73934fe31816f34cf9
+Pnpd.class.php = 99be03d9b2ef1417c4ea6c9cecf77e3a2784a6d156a37d6c175462736c1e505a
+Ports.class.php = 03fdf6a74527eafe8698b502ec404d391445d0b626e348d94923ed46b0fd94b4
+Reg.class.php = ec9c4991e21925c95fb18237575ee0c575dbc4769a390a478da8bb8fd45a799d
+SSL.class.php = e07307613391151239839f0ea90f93576096451921a60896172a22231f1f6941
+Sales.class.php = 2ef3ea87ed7f15f5320597264f9dc3a92121d9c37ea1326c0c16024c21c13924
+Sysadmin.class.php = 73e22f990652f042c1c849f948c5617afcdcf9f0a87ac40a25c971febc922951
+Updates.class.php = 73039ec91406a797b50384f54aae23a53c567308b387c7fbe29bcbf405499b5e
+VPN.class.php = 65f6dafc824d1778881553aaeead7b0d2c637102f138d0360c914bf26c0ed7c2
+Wifi.class.php = f1931aeb324169a7273947b11cc363ccc2020782645d3770faff61ad3d7d1a3f
+agi-bin/LoadLicenseIfExists.php = 0c0cf4bbeab087afa24f0effa92c9daf71e89859505631bb048aa03569cfce72
+agi-bin/abnormal.php = 34b6bb45730a76e1b83709688bcabfbeffc091e310f2822e11f74e50c416f573
+agi-bin/ddns_client.php = d29c3d0113c22540ed739162e13b86679890a68f875cc96a94a9d8f223fecf7b
+agi-bin/update_license.php = 82dc578ff06b126fb307c3c2e7f9e4dd76eb70b302e0312b15c125cd1969dad3
+assets/css/activation.css = d8a6c3c7659d71c9176c3a9a595008bb688566dde736efb28c76b3b450e781f9
+assets/css/jquery-cron.css = 482f60d1a67b51527cb7b2e07d2c092b30b16a61807aa90483ae2af7667e603e
+assets/css/license.css = 1418d6aeb373d6b39e0bfcd11a448f41b6e9c1034a29b915e7411c798828d629
+assets/css/network.css = c4e832aeb9a51d31921ccbc2e2bf9ff4a1361d5498eb558c8a0704d8969cf7cb
+assets/css/portmanagement.css = 14f6cf9417834bc767eadabb7140dbfdfdde456d346551472b2252c52c2b9f2a
+assets/css/support.css = 3f58fcf5e5edaddc463ab73413cb6d1192fbeeedfc347c6e95be2a136aa99d64
+assets/css/updates.css = 78900330e12eef99bbc52cc655bb50ed0488bbc716faaebc8a0c1268ec3f935e
+assets/js/activation.js = 817c6a937f6bc05cfd978d42586ea997cae76d609908fcd360383b23d875914c
+assets/js/jquery-cron.js = 5da3c0bb31c70a2ee6d60510b71ed89c10d984804289f788cd2b4c8e2f45a20e
+assets/js/sha.js = ea24dead85337d99bee12ef4bf9756d6c30935eced1949060d9f4659a9fbf2a3
+assets/js/sysadmin.js = 62afcd1a1acff14abb9e37f0a1245ece627ec99d10222105f1f3ab6d2421bf4a
+assets/js/views/ddns.js = e3a9f5cc11db151353d7dba48edc48fedb578c130a5c43e0faaa87197cd46145
+assets/js/views/dhcpd.js = 0467ddcb271009ace709b78d80836e874e06b316e9684d891c418331ae0b5140
+assets/js/views/email_setup.js = ec91a11c00c51f4f4fe3dc7a2278030e3b4740bf895fc22297edf17a883cae05
+assets/js/views/ftp.js = ae9a36081ddbda50d69beeacafbf63d5117a5bcfff7a71232a168586c76eb127
+assets/js/views/hostname.js = 5b1291d72eb8b324df1031b94d03bf0f3230a61d2879e9f721b8ada1fc4abeb8
+assets/js/views/intrusion_detection.js = 88685bd4a87550dad656f28e7462f1a980b47dafb6244129c6c10e875d604a5d
+assets/js/views/license.js = 752b0fc937c40f4bb267779228c2140d7c3f64e9feaf04c4956ca5ae9b20be6c
+assets/js/views/network.js = e73108018ec13fa33db5a50c3110f3fe4ca17654b2badfc5cd3a8966b030f9f2
+assets/js/views/phone_configs.js = f6b209ddabcdff751aead6041fcac4c640237ebab1b2c978bcfa4eb019a1a8df
+assets/js/views/pnp.js = d370c03e2f693dd24e23d2e90a664be1771af74063ae32a95d76c7d9a0ccfac0
+assets/js/views/portmanagement.js = 074f0b5dc5e0168d61e57e2db9d52c470dde49efb9e3245486a8adb427a969a4
+assets/js/views/portmgmt.js = 171dc15bf897df3dceacad0e5347529dc10aa8db968462c319a6a03f680a55e0
+assets/js/views/power.js = 1446c3996a387237daf101bbf33c94384e3c65745a242ef4b930600aa919bfba
+assets/js/views/ssl.js = db3451bf0e606225c32f1c94b8bdcd8aa4ef66b57744d1577e29f135d0eebf2e
+assets/js/views/support.js = 44f6d84dd2b4f10e3b220230a5656e4159a9b9609f894e22330ecea56771b0ad
+assets/js/views/supportvpn.js = a6311525373e620f9d0814909c4ec928df3f75afac84acc04532c992f5e92f29
+assets/js/views/timezone.js = 8ec015326d63c145b47470884863d967129027c19f1a12a552f94b2171cb137c
+assets/js/views/updates.js = f8f295f712ad7b246c6e2b1bb5eaaceb7cf7c1f7ce7301dd76dec5596ea36eed
+assets/js/views/ups.js = 7d1242e55ee775f54612036bafe6bc28542984af88d691b3ecd0a4b95cf3dd89
+assets/js/views/vpnserver.js = 3ad056172ece0c69fa880f806b11d4822c59e9c665075fa0f0b313d6595a11ea
+backup-keys = a42f5a3259ba03bdd8fee55312e6edefe0f203dfc324f85b035769ecfd6997f4
+bin/activate_existing = bb3a5227c78cdbac2311c431f4e53240da6dd4f9571f87fdd64bc0b0a54790e3
+bin/check_portal.php = b6c7099bc8cfedcbf7eccd879105e34b105edd24045e315719b5e1e68b5d9639
+bin/freepbx_engine_hook_sysadmin = d60dc3d250a2cab0cde6a27f5f6f093b7d1de9b8f2591b64a55f1cbe6fc6073d
+bin/letsencrypt = 3eaac7268b4753c25401cbcdfe4f477be0dfcd3b1b44bd09febc2818ae017960
+bin/licinfo = 09130556ff717e66e606a8d760ad03593cdc4b401918a1411f7ae653d59d5ea4
+bin/pnp_server = 0c135146e8b049d67ae89a4eb6a0cb4ad9ab1c842237a9b1814920bf7fcd7256
+bin/register_new = 6a83960aa77431462b7f647ba4da52f9ad35de2e1dd1408f5ccdb1a87c26ab5c
+bin/register_serial = 60ecf524517d666e855cc649091fdda8092d36512bfe4488800c2ea2e197b40e
+bin/storage.php = b578ea1e91c47fd2ee1d2edda153a029990493b12fa60a5a669f8aad909bab62
+bin/update = e35b859d7bfdebeba791aafd3813271819a90db7c9a77cf5085163d42f4dfa48
+functions.inc/Schmooze.class.php = feb03a482bae0169faebfca7b7894007c5bfee7bb94752e77a8a40aeb1e91617
+functions.inc/abnormalcallvolume.php = 2df5c174db09ac78c6e05126a75429ba4ba0f63405584df4e4cc4e5d2ab47590
+functions.inc/dns.php = 6c06cc94388cc93aa3b87b8a695c12691373c5c4171c8b983d06274750d1f0a4
+functions.inc/email_setup.php = 50bf8134bb48fe365574a7a3a241130e337b285d42f14de7ca0695f4da82834a
+functions.inc/ftp.php = 699d8940225a64d1485e17963d78797fd799c9d5a46108107eb248a96d3d70a7
+functions.inc/general.php = 4a5a2930a54a75d653daec9cd8aa293717164dd3932f0c85169436837a9ef73b
+functions.inc/intrusion.php = e8055f92cacea3833a5ef209a3a42fdea74573a9be5ad93df257afb48b197c11
+functions.inc/license.php = 25955b2d7bece76c02f6702082748ed6e83255fb19cc3467cf2ba39f6f24fa2f
+functions.inc/licensed.php = 2c407621843e5298224f691b2ae238e9d699d12f19ae6e7d688b68043f14c77c
+functions.inc/network.php = d8710112b1f27d2d3cce549f3533cdf8ccdc2abc1f30e7ca83c75bee86e25aa9
+functions.inc/sales.php = 633fce9bb8ce3506731b92f6b3efea8fd008cc455190fde183a720034c4a9f37
+functions.inc/storage.php = 0a0a48956314ef11f67b1a29febdd1af47c1d913d357519285a5f119aad08a41
+functions.inc/supportvpn.php = de4d230f1f8665c61b14fafe040225e6bef237f9035d24d30a93df31fc9d65a7
+functions.inc/tz.php = 1b11ba594522efd7a22440b0f9dc661341cf004f6ff0edd99a9b547195453c20
+functions.inc/updates.php = 8d91cb858e15a1cecc3985c0d64907dbcaaf244a9ea968f085f3424fd314f128
+functions.inc/ups.php = d833f17ef1c814ed91fd44c2e212e003e9f32ee786af873f94d726885359e013
+functions.inc.php = 67acde8486508c1d8fcef1eb5dbf9c5a0fa8d9554ab336fa215ff0d06838f3a7
+hooks/config-pnpd = 1642dbb4af8df0f62aba6d6e0d5bee5ddb4072190169b69589df1bb441c29af0
+hooks/config-postfix = bc2cae0b7689a6b7cdb74336620f2796c627a9d169d477711fe7725eef650130
+hooks/crontab-update = 895674f74dbb9d0d4daa3c4f2abc9ea4e395b2230a4f46a4eb3345908b6815f3
+hooks/dump-iptables = ee438e935fe523337e2590f8f6fa0641b5939644cfef254cb66a931bb41ff16a
+hooks/fail2ban-generate = 2234e0cc57da8c7d64f45d43747e710eddb958cc45a443c92431dfd2e54aa55f
+hooks/fail2ban-getbanned = a6565966818f20a35ab00d27a6c493590b53441936696ab4aac36686223f2af5
+hooks/fail2ban-start = 8932067442976535fa7898f6c82da950f10e2072cd05a02124ebca96496e1b61
+hooks/fail2ban-stop = 92148031f47d1214f460329443d716be684f9deeadc4c4db615688849bba5723
+hooks/generate-pem = 0c5963713527bf6524272a7346ced6103aed231fd26cb03fa1dc3cdfd00f877b
+hooks/import-sslconf = af27b2d9034350e6fde7522137f4fb77920070cec2d86e8bba209619e85400bf
+hooks/install-xactview-rpm = e1c16e97f429b2567a103cfaa10b6ee4adc30aef6a3f4a0d79c3647024bd8d52
+hooks/poweroff = e6e8339703327841e3c5490a0ba740f1607645684dbaa3af3c39a6b444be1bc3
+hooks/reboot = 905fde49ef92f8e7fd72c76e226bf8a1c8f09610d68a475c720a51a62afd4339
+hooks/restart-apache = bf167241d4e2e74885e387b91e0a76d7387a37f8903f29e7c22b6cf781280b61
+hooks/support-vpn-start = b98aab54c430e2f15deb3ce3eab1c4c23563576226728ca7111b18b57239cbc6
+hooks/support-vpn-stop = 4678964a04615d5ff95f9b106bb2971f6774d9974a93e7a4352898a088f92a9b
+hooks/sysadmin-update = e1dd10649f24fd61fa92c5cf2c42958bbde51d0612c19e9e6e75d6c3c0936802
+hooks/toggle-sshkeys-rpm = 10162b4f50347f838caf72680ff37e4b93057f774d54eb4e5c41f864d9c6229d
+hooks/update-dns = 7af2ceacaafe7d2671c1bd1c50288f38f348e94370ba45391681cf5e0139c330
+hooks/update-dnsmasq = 7e6d81b6c908c8ac34e5abe9bd1f22c8c926523b0cfb3bb234186f7900bdfa4e
+hooks/update-ftp = 67eb07c1d4bf7b67df2382d38e82e7f8b42b69b36900579f6b17f7df0a063059
+hooks/update-hostname = 77d54d6d09dfd17a1e119441085cd80d46335059d32f15f902aa0b05a5d1139c
+hooks/update-interface = 9a19d0f9b96c5a620c2c6c0a16b7853a93ff95e568b2fa9654217740270d260e
+hooks/update-mdadm = 557e78c657b67ed179850b695074a9723197e15c572cc51c2f983c84cdad483a
+hooks/update-ports = 188c37596f44882f13d4b8a162eda206459b78240183f13ff2e4d8debe232063
+hooks/update-sslconf = 7e3ef35e43ac810ad1ddd91241481641108a84c9c7e5057751203cbfaeb35030
+hooks/update-system = 00a82a9fe8952531b7547acac70a70de400d88e2d51a6515cc35e9a40eaae2cc
+hooks/update-timezone = fcbf62d2a08e17cfe59fecacc9fe70c5f634623f4194415b9fd9820f902b19f2
+hooks/update-timezone-no-restart = 58530bca7e340ac18345cae70d8036a38c3a1c629b34cc3b0402ee16adee706b
+hooks/update-ups = 378954b90acd9aada975d6701694862a0d0bb4980789c924e1b50ff5494f6f06
+hooks/update-vpnserver = f072e091d822d8a3f230924b955fdea2f3255b5a8b115cd45d205224134378d9
+hooks/wifi-associate = 8379c1d1d7217612aec9d80cfb6c7a396d17825c12edfddc38b23a192f31bbe1
+hooks/wifi-scan = c62cae8cc89b1b1f2707104692d09efdfbe7411e2a217ee48a68841334c1a861
+install.php = 858093b109bec0e38feba1d372fb70bf83bbce6b4449003222f297a5e61c7e4d
+module.xml = 1b7a865cc5ddf982d66a2369f1cf5688dc2ad44db48969214da79f717121ef9e
+page.sysadmin.php = 3b5518fb5ceeb91ca11d62f7e899d4b1010e42f8d8ca9a48dda1b27c688dea02
+sysadmin.css = 3baa2106adfb636eec426ebf249f114a4bdecd9a016115a8f4ecadc7e997e8da
+ucp/Sysadmin.class.php = 131b0f17319ffbc3424f2abb0b07d6308f603b7134fcbf28ca35b02cb480d8e0
+ucp/assets/js/global.js = c28df37d7978f326c1570820af189c9b2d658c4b7d39993dda0eb4002e6789f9
+ucp/assets/less/bootstrap.less = d9121768a403f7bf3c978ad5c4f6ec0c65602518b080d2714b4a7d2a6ab70e22
+ucp/views/footer.php = 7961a8109165e17c6168fbe816c99cf338748aa90f1eefc0a698b1f7e71436ed
+ucp/views/header.php = d6869f4996f477914389d37b7a26a8153d87471aac76aafb016c92013e69bbcd
+ucp/views/nav.php = d506eb3d7131547c037c7f294e0b5dedb8cd17495d1eaacb9a7e4eb683e9ca83
+ucp/views/vpnclients.php = 4f914d64eac4ddddb8153ec2e77354070db7e8d9939b02fd54e831622327ac93
+uninstall.php = 163e16bb972bea7bd9e066075498083ffb0b9b9c61a488f94308d08a00fcb098
+views/abnormalcallvolume.php = d12e3d6d18dc1e686fb74b7d2cdd77f3084115bc7cc98167089565d6e9ec8f16
+views/activation.php = 23cc22f3d16978d99d9ca1edb031a4a5e16d58b98ae1dbe6fa70c8fe2b71bdc3
+views/ddns.php = 5231e733742d731d6f2db1562d6b5bfd2ae329d1e92aafd39ac7c4e85c658c14
+views/dhcpd.php = ce85dbc0f743eb38b1e020e51061523f4cee30ec6bbd56a827626c7cdb265a41
+views/dns.php = 89dacda7cebb60d548671a35801651772cbea6703e156c5b1cac49e31d75a0e5
+views/email_debug.php = e06e17797f5c6bb4509ba103406af1e7da9e92ffc0a80bccc3edf166a9c80938
+views/email_setup.php = 086dfc4ce4f21165abf6d3d2dc548a3b74fcf49653ec74bc2999d0629b36ea24
+views/ftp.php = 0215ecec393f8bf5ebff7336277a995774a77bb41df34d14573a52adb3cb5088
+views/hostname.php = 103f2a88fafc3cc31a0d79889d6c27b62524b0c9899b7212f2d5ae9eb6be3fe7
+views/index.php = f34a971bd7b8d3c8fdbb678b155b19ca150b87010ca62b70f3436f1bcbb5324c
+views/intrusion_detection.php = 6cb3fe2b0746b010420f819f198f544983bab76073283d4454855b53193ead81
+views/network.php = cb9fabbb84275f2f09158218c70dc69ff71c4f137ea932044df4b1add9b16fa8
+views/notifications.php = aa46856b8e5ab148f1224367559dc0c036843267f0df074c8695baa6c453d863
+views/pnp.php = b44a01d41e06e4866257fc3a522b988cd6e56d00631c933ff41a990695445f49
+views/portmgmt.php = ea02cd6f808f3f4572eb60eddd66e4932f7a6ce2c4f6c241b37c5e1614c56e25
+views/power.php = 4df2e1a186e8ddc55a78449a925ce818929185b70c0f9f09246abb8ae0a84b80
+views/rnav.php = fc4535a89a9381aa611118150753cbe1910e7822a1edbe308a4c9d95fec0bd87
+views/ssl.php = 6b5b0a0fe04734cd07c2cc86a3ed944cd977a40ad595874a30dd35cc68f18e8c
+views/storage.php = 5c852716f87ab194c95b44932d10e9b77a64c459c8abe71da5b01e63f4cf9d27
+views/support.php = 79719e97d226cedc62cd6a00c4c4d16bf2aaed4f2d56b9d59c8b17549cfeb218
+views/supportvpn.php = 3f458ff823a3e211ca31c8b68a3598d8867fc2e51ef67edfa3006c8566c4130f
+views/timezone.php = 70350cbb80315ec066c79b35839208f763a99839e6646beca256bf35125e827c
+views/ucp_config.php = dcd35c91d61835e82fad80c938629a7b6142248c9f3014f452ba52f86cb78075
+views/updates/cron.php = bebb0197b65aab50a54978d198c7beadba90277c422525f7616f3d88f290d31e
+views/updates.php = cc5fe870a287f69bd22738cb4065038f7cd3aeef17da5fb771cacffeedc0ec5b
+views/ups.php = 160aa7801f97dd3e3990dec97e6281a1ee08b8408450e6bce95d3440b229fde4
+views/userman_hook.php = a4fda7d8b8f0f8564cfc133998bf54644253ffe01c32380e31059db1570a5eb9
+views/view.activation.licenced.php = 529f0a6e830a93f0b14b8771707ffdf4027cbdb5951ff1ab40e5e7f3be5189d5
+views/view.activation.offers.php = 2b0c361f9fbd7a16f7a82a0fc3090562e4dc70c0dc80609321911ba75f850970
+views/view.activation.unlicenced.php = 491d17b1c67cad9c25a7c2859b56175bb070c6b51dcc246005c5ca575718a47d
+views/view.dhcpd.home.php = a638fbacb1c45ce3cde23b4c83993ef7996acf73a9884d08a6c2ec4a8f0cbb1f
+views/view.dhcpd.reservations.php = 64df5c3b711f51e90bdf16932094f34c6f203af6a13c70f3c9fc4aab1adea5a4
+views/view.network.nowifi.php = 0667bd7b1b8724c3d190d05441f08007b27db466348ccc7e7dfae57ec638993a
+views/view.network.wifi.php = 0bc5c1fd0be7ccd5f94790929769f44e1d92b27169a5eec77a6444e6fa1be616
+views/view.network.wired.php = 652adaa37a4af3d0288a838f4f082bf977fe1cf72104662fef153a3ab264dacc
+views/view.ssl.genself.php = 0de6ca1ef21dd57a9a9af1b1d051b6b5a6efc1867f7a7e83d7bfd823c26a99e1
+views/view.ssl.getdetails.php = 43afe2d6c48452d2e7d76bf39c17ddcdf40196b11dd1b05615882974ac1931a0
+views/view.ssl.installcert.php = a27def609a8e330d93bb71f31630cf38692338460894878da2fb6e94d4bcecfb
+views/view.ssl.instructions.php = 60668c3db66e0205747bff3a3fdb3b0e7ed8e9fa91283774f656197dd39a5434
+views/view.ssl.settings.php = 1f9fdd337579051b151bdc129d880b8dbe3a6eeb0c4122a9866f3f1a751b5acb
+views/view.vpnserver.settings.php = eb2129059c66b5ea01a826279372e0b0d08afea013ead19716b1c93276105f70
+views/vpnserver.php = 498f9121d307378864eea9e82258aa67db43c2bb8e43497af87f8f7e1f4d1973
+views/vpnserver_client.php = 7a6be439bbe64923d1082937e383ff8802aa8f54b9ba2d566b35b5c53f979b43
+yealinkvpntest/keys/sysadmin_ca.crt = 3af2c2b865d42f8ca93be0b54f734c9117a48adf1d7a7ed815425f227b71ae3e
+yealinkvpntest/keys/sysadmin_client5.crt = 23204a523fd11cc3feb1a3d123892ca17cbfc679aa6c4974b47292bed4bab134
+yealinkvpntest/keys/sysadmin_client5.key = 780d48f0ce78598dbb071325de372b81d6bbbdd252266b59ba15838137ce6ba8
+yealinkvpntest/vpn.cnf = 12babd672bbdc24b5d5f77f6a3ab29dc16eeeddcc0ae2194549e48e4a274c83b
+;# End
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.14 (GNU/Linux)
+
+iQIcBAEBAgAGBQJZdjxMAAoJEIbOh3Rp0urZil0QAJuOclRAJzD9V9SKz+JmUxkL
+gwxNBtUwfaaQv8BsrqFuQ2kXXfSfZOe8xJEFd8OPLWhVeRCY+DjCKmYCXCOqv0Cc
+IXMpB3ySxEpVYsiQRBQJtAz0x4y4qdT0ZtfiMmK/qD8i+4ppSqIr2XgrxRo12ZHL
+Ep0i0PeaoNk5WVFPP30yF4DrFqBFSvmHXmqdciiMvosAO0OTMNeB6zOLvDuHjfL4
+na+j+5/oRZpA7adt7Na+HPIIl541nMKcxrldrhF3/zgLtmcWzeabuCoh+1cDQ7gf
+LcD1HTPKF2RzbiOX7opw21549p7D0x9mf+oFaIuBSqjc3M2gI/YGkMs14b3ttbkA
+ztHnnbGP1cvCVBpl2+g/XTFsxANv7GmqEXTHHwHYLO6AGA+CqTEmA6x/In2yU9UY
+f07iNOewv8KF4kNTC9k/AoQey0iQa+CqOUG9JbtrQKj8WXTQIQNLjq1a2gV+DDfj
+a8sOtf14Q/eElNv5k4MKfwISjbO2lFDiy2x/WJlEjI9meHXTWxJKKYU8tekfqRDu
+ojIVoAdUahSdCGsQ1yBUOfDlR70ZQgh/Tcr9VBn2qY1D/R5NVL5FTcnUeCw6vwjw
+xtPrAZs3kGS9T88uHlLsI8uirjJf5Hwq4b1XCeEWrxw8y5dugJ9GaIk0LpAmMaTE
+jAGuj0JhzmkMWDXc9vom
+=EUaW
+-----END PGP SIGNATURE-----

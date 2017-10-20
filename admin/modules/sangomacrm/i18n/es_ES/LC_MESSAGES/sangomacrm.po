@@ -1,0 +1,334 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sangomacrm
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-24 14:00-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "API Key"
+msgstr ""
+
+msgid "API Secret"
+msgstr ""
+
+msgid "Accounts"
+msgstr ""
+
+msgid "Attach to Record Types"
+msgstr ""
+
+msgid "Attempting to update your curl version"
+msgstr ""
+
+msgid "Auth Token"
+msgstr ""
+
+msgid ""
+"COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www."
+"schmoozecom.com/oss.php - Links your PBX to your CRM"
+msgstr ""
+
+msgid "CRM"
+msgstr ""
+
+msgid "CRM Password"
+msgstr ""
+
+msgid "CRM Settings"
+msgstr ""
+
+msgid "CRM Setup"
+msgstr ""
+
+msgid "CRM Type"
+msgstr ""
+
+msgid "CRM URL"
+msgstr ""
+
+msgid "CRM URL Can't be empty"
+msgstr ""
+
+msgid "CRM URL does not contain the protocol"
+msgstr ""
+
+msgid "CRM Username"
+msgstr ""
+
+msgid "CURL Outdated"
+msgstr ""
+
+msgid "Call Recording"
+msgstr ""
+
+msgid ""
+"Cannot resolve the provided host for CRM URL. Check your entry or your "
+"server's DNS settings"
+msgstr ""
+
+msgid ""
+"Check your file storage quota. Your availible storage space may be limited."
+msgstr ""
+
+msgid "Consumer Key For Salesforce"
+msgstr ""
+
+msgid "Contact Relationship Management"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Copy Voicemails"
+msgstr ""
+
+msgid "Customer Relationship Management Link"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Download link for CRM tarball"
+msgstr ""
+
+#, php-format
+msgid "Enter your authtoken see: %s"
+msgstr ""
+
+msgid "Errors while loading"
+msgstr ""
+
+msgid "File does not exist"
+msgstr ""
+
+msgid "Files must be less than 20MB in size. This size is limited by the CRM."
+msgstr ""
+
+msgid "Generate new Private/Public key pair"
+msgstr ""
+
+msgid "Generating..."
+msgstr ""
+
+msgid "Get OAUTH2 Token for the Salesforce API"
+msgstr ""
+
+msgid "Get Salesforce Token"
+msgstr ""
+
+#, php-format
+msgid "Inbound call from %s"
+msgstr ""
+
+msgid "Leads"
+msgstr ""
+
+msgid "Link this User to a CRM User"
+msgstr ""
+
+msgid "Link to CRM Record"
+msgstr ""
+
+msgid "Link to CRM User"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No Recording File"
+msgstr ""
+
+msgid "No URL provided"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Not Set"
+msgstr ""
+
+msgid "Oauth data found. If you are upgrading this is OK"
+msgstr ""
+
+#, php-format
+msgid "Outbound call to %s"
+msgstr ""
+
+msgid "PBX"
+msgstr ""
+
+msgid "PBX Call"
+msgstr ""
+
+msgid "PBX URL"
+msgstr ""
+
+msgid "Please enter an inbound DID"
+msgstr ""
+
+msgid ""
+"Please test the SSH connection by hitting 'Test Connection' before "
+"submitting this page"
+msgstr ""
+
+msgid "Private Key"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "Recording Storage"
+msgstr ""
+
+msgid "Regular Expression Digit Match"
+msgstr ""
+
+msgid "Regular Expression Number Match"
+msgstr ""
+
+msgid ""
+"Regular expression used PER digit for Accounts/Numbers/Leads lookups. %digit"
+"% is replaced with each digit of the inbound number. This expression is "
+"repeated for every digit of the DID. This expression helps to match numbers "
+"that are in the CRM for relationship matching in various formats such as '+1 "
+"(444) 123-4567'"
+msgstr ""
+
+msgid ""
+"Regular expression used to match and cleanup numbers coming from the PBX "
+"before being sent to the CRM for relationship matching. This helps to match "
+"DIDs that come into the PBX such as '19991234567' and turns them into "
+"'9991234567'"
+msgstr ""
+
+msgid "Remote Storage Path"
+msgstr ""
+
+msgid "Remove Salesforce Token"
+msgstr ""
+
+msgid "Removing old Auth data"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "SSH Username"
+msgstr ""
+
+msgid "SalesForce Data"
+msgstr ""
+
+msgid "Salesforce Token"
+msgstr ""
+
+msgid "Select a CRM engine"
+msgstr ""
+
+msgid "Select the CRM server type"
+msgstr ""
+
+msgid ""
+"Set to CRM to copy call recordings to the remote CRM. Set to PBX to keep "
+"call recordings on the local PBX (You will still be able to listen to the "
+"recordings on the CRM as long as you open up access to the PBX admin "
+"interface for your users)"
+msgstr ""
+
+msgid ""
+"Set to Yes if you want to copy voicemails to the remote CRM for listening"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Should we store a copy of the voicemail on the CRM"
+msgstr ""
+
+msgid "Store Call Recording on CRM"
+msgstr ""
+
+msgid "Store Voicemail On CRM"
+msgstr ""
+
+msgid "Store a copy of the call recording on the CRM"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "SugarCRM/SuiteCRM Module Download"
+msgstr ""
+
+msgid "Test"
+msgstr ""
+
+msgid "Test Connection"
+msgstr ""
+
+msgid "Testing..."
+msgstr ""
+
+msgid "The CRM URL"
+msgstr ""
+
+msgid "The CRM Username"
+msgstr ""
+
+msgid "The Password of the CRM User"
+msgstr ""
+
+msgid "The URL you'd like to use in the CRM for linkbacks"
+msgstr ""
+
+msgid "Unable to match based on pattern"
+msgstr ""
+
+msgid "Validating credentials"
+msgstr ""
+
+msgid "Voicemail"
+msgstr ""
+
+msgid ""
+"What types of records should we attach recordings and voicemails to.<br/> "
+"Note this uses a different file for each record. This means a 5M recording "
+"will take 15M if there are 3 matches."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+#, php-format
+msgid ""
+"You are missing support for playback in this browser. To fully support HTML5 "
+"browser playback you will need to install programs that can not be "
+"distributed with the PBX. If you'd like to install the binaries needed for "
+"these conversions click <a href='%s'>here</a>"
+msgstr ""
+
+msgid "Your version of curl is out of date. Please contact your reseller"
+msgstr ""
+
+msgid ""
+"Your version of curl is out of date. Please run 'yum update curl' from an "
+"SSH terminal."
+msgstr ""
+
+msgid "helptext"
+msgstr ""

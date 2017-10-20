@@ -1,0 +1,458 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for broadcast
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-05 18:03-0700\n"
+"PO-Revision-Date: 2016-04-04 17:55-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "AM"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Add Campaign"
+msgstr ""
+
+msgid "Add Group"
+msgstr ""
+
+msgid "Add a Call Group"
+msgstr ""
+
+msgid "Add a Campaign"
+msgstr ""
+
+msgid "Add/Edit Callee"
+msgstr ""
+
+msgid "After Campaign Completes"
+msgstr ""
+
+msgid ""
+"Answering Machine Detection is configured in the file /etc/asterisk/amd.conf."
+msgstr ""
+
+msgid "Applications"
+msgstr ""
+
+msgid "Are you sure you want to delete this entry ?"
+msgstr ""
+
+msgid "Attached is the current report of calls made."
+msgstr ""
+
+msgid "Attached is the report of all calls made."
+msgstr ""
+
+msgid "Broadcast"
+msgstr ""
+
+#, php-format
+msgid "Broadcast Campaign %s (%s) Complete!"
+msgstr ""
+
+#, php-format
+msgid "Broadcast Campaign %s (%s) has Started"
+msgstr ""
+
+msgid "Broadcast Campaigns"
+msgstr ""
+
+#, php-format
+msgid "Broadcast Error for %s (%s)"
+msgstr ""
+
+msgid "Broadcast-"
+msgstr ""
+
+msgid "Browse"
+msgstr ""
+
+msgid ""
+"COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www."
+"schmoozecom.com/oss.php  The Broadcast module for FreePBX allows you to "
+"broadcast messages\tto your custoemrs or clients.  You can create campaings "
+"and set start and end times.  From their you can direct where you want the "
+"call to be directed to based on if a humna being\tor a answering machine "
+"answer the call.  Upload your CDS list of names and numbers and start your "
+"campaign.  You can also choose to get reports on your campaign daily or "
+"after the\tcampaign completes."
+msgstr ""
+
+msgid "Call Group Name"
+msgstr ""
+
+msgid "Call Group URI Source"
+msgstr ""
+
+msgid "Call Groups"
+msgstr ""
+
+msgid "Calls"
+msgstr ""
+
+msgid "Campaign"
+msgstr ""
+
+#, php-format
+msgid "Campaign %s (%s) deactivated"
+msgstr ""
+
+msgid "Campaign Active"
+msgstr ""
+
+msgid "Campaign Caller ID"
+msgstr ""
+
+msgid "Campaign Name"
+msgstr ""
+
+msgid "Campaigns"
+msgstr ""
+
+msgid ""
+"Choose Daily After End Time to have a report emailed each day after the End "
+"Time is reached (see below) and also after the campaign is completed.  "
+"Choose After Campaign Completes to receive an email only after the campaign "
+"is completed."
+msgstr ""
+
+msgid "Complete"
+msgstr ""
+
+msgid "Complete Campaigns"
+msgstr ""
+
+msgid "Concurrent Calls"
+msgstr ""
+
+msgid "Current Campaigns"
+msgstr ""
+
+msgid "Daily After End Time"
+msgstr ""
+
+msgid "Date/Time Options for this campaign"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete after Retrieving"
+msgstr ""
+
+msgid "Destination - Answering Machine / Voicemail Answered"
+msgstr ""
+
+msgid "Destination - Live Person Answered"
+msgstr ""
+
+msgid "Dial Prefix"
+msgstr ""
+
+#, php-format
+msgid "Don't know what type %s is."
+msgstr ""
+
+msgid "Duplicate Campaign"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Email Reports"
+msgstr ""
+
+msgid "Email Reports to"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "End Time"
+msgstr ""
+
+#, php-format
+msgid "End of Period - Campaign %s (%s)"
+msgstr ""
+
+msgid "Enter the caller id you would like to use for this campaign"
+msgstr ""
+
+msgid "Enter the email address you wish this report to be emailed to"
+msgstr ""
+
+msgid "Enter the maximum number of retries on failed calls."
+msgstr ""
+
+msgid "Enter the name for this call group"
+msgstr ""
+
+msgid "Enter the name for this campaign"
+msgstr ""
+
+msgid "Enter the name of the callee"
+msgstr ""
+
+msgid "Enter the number of the callee"
+msgstr ""
+
+msgid ""
+"Enter the total number of concurrent calls to be active at any given time.  "
+"This should be less than the total number of channels available on the "
+"system to still allow calls to be made and received."
+msgstr ""
+
+msgid ""
+"FTP ONLY. Will attempt to delete the file after downloading. If it is unable "
+"to delete the file, for whatever reason, the import WILL NOT proceed."
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Group Options"
+msgstr ""
+
+msgid "Groups"
+msgstr ""
+
+msgid "Groups to include in calls from this campaign."
+msgstr ""
+
+msgid "How many seconds between URI updates"
+msgstr ""
+
+msgid ""
+"If you would like to customize the from email address that reports appear to "
+"come from, enter the email address here."
+msgstr ""
+
+msgid ""
+"Import a CSV File formatted as follows:<br/>Name,Number,command<br />  "
+"Fields separated by ',' <br /><br /> Command is either 'add' or 'remove', is "
+"optional, and defaults to 'add'. Example:<br/>John Doe,12345678,add<br/>John "
+"Doe,12345687,remove"
+msgstr ""
+
+msgid "Important Notice"
+msgstr ""
+
+msgid "Maximum Retries"
+msgstr ""
+
+msgid ""
+"Maximum concurrent calls that this campaign can use,Should be less than the "
+"Concurrent Calls available in the general settings"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Numbers to Call"
+msgstr ""
+
+msgid "Only Call Between"
+msgstr ""
+
+msgid "Optional"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "PM"
+msgstr ""
+
+msgid "Please enter a valid Campaign Name"
+msgstr ""
+
+msgid "Please enter a valid Group Name"
+msgstr ""
+
+msgid "Please enter a valid Name"
+msgstr ""
+
+msgid "Please enter a valid Number"
+msgstr ""
+
+msgid "Please select a destination for Answering Machine/Voicemail Answered."
+msgstr ""
+
+msgid "Please select a destination for Live Person Answered."
+msgstr ""
+
+msgid "Please select at least one call group."
+msgstr ""
+
+msgid ""
+"Prefix to be appended to every number before dialed - useful to force calles "
+"out a specific Outbound Route"
+msgstr ""
+
+msgid "Previous Campaigns"
+msgstr ""
+
+msgid "Remaining"
+msgstr ""
+
+msgid "Report"
+msgstr ""
+
+msgid "Report 'From' Address"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+#, php-format
+msgid "Resuming Campaign %s (%s)"
+msgstr ""
+
+msgid "Running"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Seconds"
+msgstr ""
+
+msgid ""
+"Select Yes to activate campaign upon addition/modification.  Note, you still "
+"need to click the Start button on the Settings page to initiate the "
+"broadcast application "
+msgstr ""
+
+msgid "Service Status"
+msgstr ""
+
+msgid "Service is currently:"
+msgstr ""
+
+msgid ""
+"Specify a URI to import the Call Group from. Currently supports FTP and HTTP "
+"in CSV format"
+msgstr ""
+
+msgid "Start Date"
+msgstr ""
+
+msgid "Start Time"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Stopped"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid ""
+"The Broadcast doesn't stop automatically after completing a campaign.\n"
+"    It will keep running and checking for newly active campaigns, or added "
+"numbers to call."
+msgstr ""
+
+#, php-format
+msgid ""
+"The campaign %s has beed deactivated. You will not recieve any further "
+"information until it is re-activated and started."
+msgstr ""
+
+#, php-format
+msgid "The campaign %s has completed."
+msgstr ""
+
+#, php-format
+msgid ""
+"The campaign %s has not completed, but has finished for the current period."
+msgstr ""
+
+#, php-format
+msgid "The campaign %s has resumed after new contacts have been added."
+msgstr ""
+
+#, php-format
+msgid "The campaign %s has started for the current period."
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Update From CSV"
+msgstr ""
+
+msgid "Update Period"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Where to send Answering Machine calls"
+msgstr ""
+
+msgid "Where to send calls answered by a live person."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid ""
+"You can choose to dublicate an existing campaign.  Select the campaign you "
+"wish to duplicate, then click Save.  This allows you to run the same "
+"campaign after it is completed while keeping previous campaign reports "
+"intact."
+msgstr ""
+
+msgid "You need to add a call group before you can add a campaign."
+msgstr ""

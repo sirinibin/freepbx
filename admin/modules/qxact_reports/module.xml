@@ -1,0 +1,74 @@
+<module>
+	<rawname>qxact_reports</rawname>
+	<name>Queue Reports</name>
+	<version>13.0.15.2</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>tool</type>
+	<category>Reports</category>
+	<description>(Formerly QXact Reports) COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. If you use ACD/Queues you need Queue Reports to help you make
+	the most of your time! Queue Reports is an advanced reporting module that lets administrators keep an eye on every aspect of there queues. With Queue Reports you are given insight into each
+	and every one of your queues. Queue Reports gives you full control over what data is displayed for each type of report and allows you to build custom templates for quick reporting.
+	Each report type such as "All Call Distribution by Queue" has a list of columns that can be checked and unchecked for on the fly view customization.
+
+	Queue Reports is broken up into two sections. Templates and Reports. Templates allows you to build the specific information that you would like to view in the report and then save it. Reports
+	allows you to run your template against any or all of your Agents and Queues.</description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/qxact.php</link>
+	</commercial>
+	<changelog>
+		*13.0.15.2* Internal Fixes
+		*13.0.15.1* FREEPBX-11805 Fix extra table issue
+		*13.0.15* PHP 5.6 updates
+		*13.0.14* FREEPBX-12171 Add setting to QXact Reports to specify how long to keep data
+		*13.0.13* FREEPBX-12171 Make data retention dynamic, default 90 days
+		*13.0.12* FREEPBX-11805 Fix javascript for template delete buttons, FREEPBX-11690 Add additional validation options for timestamps
+		*13.0.11* Proper permissions on import script
+		*13.0.10* Remove en_US Translations
+		*13.0.9* Rename Module
+		*13.0.8* FREEPBX-11018
+		*13.0.7* FREEPBX-10683 Fix delete urls. Move to slideout bootnav
+		*13.0.6* FREEPBX-10409 Fix whoops errors
+		*13.0.5* FREEPBX-10270 Fix reports whoops error
+		*13.0.4* Stop pushing out warnings on the CLI
+		*13.0.3* Fix Cron issues
+		*13.0.2* Version bump Beta
+		*13.0.1alpha1* Visual Updates
+		*12.0.1* Validate licence correctly
+		*2.11.0.8* Add additional indexes
+		*2.11.0.7* #8092
+		*2.11.0.6* Fix for % Abnd showing the average and not total on the total line
+		*2.11.0.5* #7522
+		*2.11.0.4* #7323
+		*2.11.0.1* Sales cleanup
+		*2.11.0.0* Bump for 2.11
+		*2.10.1.21* Packaging of ver 2.10.1.21
+		*2.10.1.20* re #1301, 1302
+		*2.10.1.19* Handle special chars in strings better
+		*2.10.1.18* Packaging of ver 2.10.1.18
+		*2.10.1.17* re #1263 -
+	</changelog>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<version>13.0.6</version>
+	</depends>
+	<hooks>
+		<framework namespace="FreePBX\Console\Command" class="Chown">
+			<method namespace="FreePBX\modules" class="Qxact_reports" callingMethod="fwcChownFiles">chownFreepbx</method>
+		</framework>
+	</hooks>
+	<menuitems>
+		<qxact_reports>Queue Reports</qxact_reports>
+		<qxact_admin>Queue Report Templates</qxact_admin>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location />
+	<md5sum />
+</module>

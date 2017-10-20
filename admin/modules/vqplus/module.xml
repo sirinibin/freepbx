@@ -1,0 +1,124 @@
+<module>
+	<rawname>vqplus</rawname>
+	<name>Queues Pro</name>
+	<version>13.0.26.9</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<description>
+		(Formerly Virtual Queue Plus) MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php. Queue Pro adds additional advanced features to Queues module.
+	</description>
+	<changelog>
+		*13.0.26.9* FREEPBX-14889 Queue Callback can be created with empty Name field
+		*13.0.26.8* FREEPBX-14713 VQplus callback only allows 40 seconds for the call recipient to confirm
+		*13.0.26.7* FREEPBX-14634 more fixes
+		*13.0.26.5* FREEPBX-14634 fix typo causing whoops error
+		*13.0.26.4* Logrotate fixes
+		*13.0.26.1* Internal fixes
+		*13.0.26* PHP 5.6 UPDATES
+		*13.0.25* FREEPBX-13195 Failed and Pending callback calls not shown in Queue Callback report
+		*13.0.24* Add sound languages: it,fr,en_GB
+		*13.0.23* Cleanup spammy debug
+		*13.0.22* FREEPBX-11942 Pending Callbacks not getting populated to SQL
+		*13.0.21* Add fwconsole commands
+		*13.0.20* FREEPBX-12067 ignore and log bad data
+		*13.0.19* FREEPBX-9895 fix callback reports
+		*13.0.18* Remove en_US Translations
+		*13.0.17* Rename Module
+		*13.0.16* FREEPBX-10976
+		*13.0.15* FREEPBX-9951 Japanese language prompts
+		*13.0.14* FREEPBX-10675
+		*13.0.13* Fix running message
+		*13.0.12* Clean up bin
+		*13.0.11* Slideout Menus.
+		*13.0.10* FREEPBX-10357 Fix call to function that is not active unlicensed.
+		*13.0.9* Fix logging for Queue Callback Report
+		*13.0.8.1* Fix licence errors
+		*13.0.7.2* Add new chown hooks
+		*13.0.7.1* Also fix dashboard
+		*13.0.7* FREEPBX-9872 Fix startup
+		*13.0.5* FREEPBX-9678 queue penalty table help text
+		*13.0.4* FREEPBX-9530 Finish vqplus
+		*13.0.3* FREEPBX-9483 Error Page for Virtual Queues
+		*13.0.2* Version bump Beta
+		*13.0.1alpha3* Add Spanish prompts
+		*13.0.1alpha2* Add support for Asterisk 12+ on Queue Callback.
+		*13.0.1alpha1* 13 Visual and functional updates.
+		*12.0.8* Add support for calls abandoned by caller.
+		*12.0.7* Potentially fix virtual queue position ordering.
+		*12.0.6* Zend compatibility fixes
+		*12.0.5* FREEPBX-8370 - Removing beta tag
+		*12.0.4* FREEPBX-7976 Only show if services are running in dashboard if licensed
+		*12.0.3* Hook into dashboard
+		*12.0.1* Redo module_hook calls to use static obj
+		*2.11.1.23* Use more reliable method of restarting daemon on install.
+		*2.11.1.21* Add Virtual Queues to queue list in Queue Callback
+		*2.11.1.20* Add announcement option to Queue Callback
+		*2.11.1.17* Skinning fixes
+		*2.11.1.15* New prompts from Allison
+		*2.11.1.10* Sales cleanup
+		*2.11.1.7* Use correct ::create() call to avoid future issues.
+		*2.11.1.6* Fix issue with vqplus and FreePBX 12 relating to lazymembers
+		*2.11.1.4/5* #PBXAC-11
+		*2.11.1.3* Fix lazymembers
+		*2.11.1.2* if missing label kills additional customers hitting queue
+		*2.11.1.1* FREEPBX-6703 clear vq channel variables after hitting a queue
+		*2.11.1.0* adds Auto-Unpause If Life feature
+		*2.11.0.3* don't report optional destinations as errors when not set
+		*2.11.0.2* Add to FreePBX Repos
+		*2.11.0.0beta2.5* Mark as beta
+		*2.11.0.0beta2.2* Packaging of ver 2.11.0.0beta2.3
+		*2.11.0.0beta2.1* Packaging of ver 2.11.0.0beta2.1
+		*2.11.0.0beta2.0* Initial testing release
+	</changelog>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/vqplus.php</link>
+	</commercial>
+	<menuitems>
+		<vqueue>Virtual Queues</vqueue>
+		<queuecallback>Queue Callback</queuecallback>
+		<queuecallbackreport category="Reports">Queue Callback Report</queuecallbackreport>
+		<qrules category="Admin">Queue Penalty Rules</qrules>
+	</menuitems>
+	<popovers>
+		<vqueue>
+			<display>vqueue</display>
+		</vqueue>
+		<queuecallback>
+			<display>queuecallback</display>
+		</queuecallback>
+	</popovers>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>queues ge 13.0.1alpha4</module>
+		<module>pm2 ge 13.0.3</module>
+		<version>13.0.6</version>
+	</depends>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<hooks>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="Vqplus" namespace="FreePBX\Modules">dashboardService</method>
+		</dashboard>
+		<queues class="Queues" namespace="FreePBX\modules">
+			<method callingMethod="hookTabs" class="Vqplus" namespace="FreePBX\Modules">tabhookQueues</method>
+		</queues>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Vqplus" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Vqplus" namespace="FreePBX\modules">startFreepbx</method>
+		</framework>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Vqplus" namespace="FreePBX\modules">stopFreepbx</method>
+		</framework>
+	</hooks>
+	<location>release/2.11/vqplus-2.11.1.5.tgz</location>
+	<md5sum>9ddf4a840395bbe324223ada8bbb8f50</md5sum>
+</module>

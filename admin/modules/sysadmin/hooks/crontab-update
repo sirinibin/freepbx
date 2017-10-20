@@ -1,0 +1,46 @@
+#!/usr/bin/php -q
+<?php
+error_reporting(1);
+
+require '/usr/lib/sysadmin/includes.php';
+$db = \Sysadmin\FreePBX::Database();
+$r = $db->query("SELECT * FROM sysadmin_options")->fetchAll();
+$s = array();
+foreach ($r as $row) {
+	$s[$row['key']] = $row['value'];
+}
+
+// Make sure there's no old sysadmin update left in cron
+$crontab = `crontab -uroot -l | grep /usr/sbin/sysadmin_update_system`;
+if ($crontab) {
+	// Remove it
+	`crontab -uroot -l | grep -v /usr/sbin/sysadmin_update_system | crontab -uroot -`;
+}
+
+// Remove the current update job from cron
+`crontab -uroot -l | grep -v update-system | crontab -uroot -`;
+
+// Should this machine be updating?
+if (!isset($s['update_cronstate']) || $s['update_cronstate'] == "never") {
+	// No updates for this machine, so don't put it back.
+	exit;
+}
+
+$scriptname = __DIR__."/update-system";
+// It should be updating.
+// minute         0-59
+// hour           0-23
+// day of month   1-31
+// month          1-12 (or names, see below)
+// day of week    0-7 (0 or 7 is Sun, or use names)
+$cron =  $s['update_minute'].' '.$s['update_hour'].' '.$s['update_day'].' '.$s['update_month'].' '.$s['update_weekday']." [ -e $scriptname ] && $scriptname -a";
+
+// Now add it to the existing jobs
+$jobs = `crontab -uroot -l`;
+$jobs .= "$cron\n";
+$tmpfname = tempnam("/tmp", "crontab");
+$handle = fopen($tmpfname, "w");
+fwrite($handle, $jobs);
+fclose($handle);
+`crontab -uroot $tmpfname`;
+unlink($tmpfname);

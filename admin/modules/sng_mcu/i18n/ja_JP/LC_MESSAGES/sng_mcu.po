@@ -1,0 +1,107 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sng_mcu
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-10 16:36-0800\n"
+"PO-Revision-Date: 2015-07-06 12:55+0200\n"
+"Last-Translator: Kevin <kevin@qloog.com>\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/sng_mcu/"
+"ja_JP/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+msgid "API Token"
+msgstr ""
+
+msgid "Admin"
+msgstr "アドミン"
+
+msgid "Already exists"
+msgstr "既に存在します"
+
+msgid "Announcement"
+msgstr "アナウンス"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Does this connection require the use of an API token?"
+msgstr ""
+
+msgid "Greeting to be played on entry to the Ivr."
+msgstr "IVRに入ったときに再生するアナウンス。"
+
+msgid "Here"
+msgstr ""
+
+msgid "MCU URL"
+msgstr ""
+
+msgid "Modules to setup and manage Sangoma MCU"
+msgstr "SangomaのMCUを設定・管理するモジュール"
+
+#, php-format
+msgid "More information on the Sangoma MCU can be found %s"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "None"
+msgstr "なし"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Pair MCU"
+msgstr "MCUペアリング"
+
+msgid "Pair Sangoma MCU"
+msgstr ""
+
+msgid ""
+"Provide the API token that is configured in the Sangoma MCU Web "
+"Administration Interface"
+msgstr ""
+
+msgid "Requires API token"
+msgstr ""
+
+msgid "Sangoma MCU"
+msgstr "Sangoma MCU"
+
+#, php-format
+msgid "Sangoma MCU Host: %s, Name: %s Ext: %s"
+msgstr "Sangoma MCUホスト: %s, 名前: %s 内線: %s"
+
+msgid "Sumbit"
+msgstr ""
+
+msgid "This module is not used if you do not own a Sangoma MCU"
+msgstr ""
+
+msgid "This module is used to setup and manage the Sangoma MCU"
+msgstr ""
+
+msgid "URL to MCU Device"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "checking for sync field.."
+msgstr "syncフィールドを確認中.."

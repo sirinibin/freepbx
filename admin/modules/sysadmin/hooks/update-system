@@ -1,0 +1,338 @@
+#!/usr/bin/php
+<?php
+error_reporting(E_ALL);
+
+require '/usr/lib/sysadmin/includes.php';
+
+// Check we're allowed to run updates
+if (!file_exists("/etc/schmooze/schmooze.zl")) {
+	print "Machine not activated\n";
+	exit;
+}
+
+$zl = file("/etc/schmooze/schmooze.zl");
+$ok = false;
+foreach ($zl as $line) {
+	if (strpos($line, "sysadmin_exp") === 0) {
+		$ok = true;
+		break;
+	}
+
+	if (strpos($line, "Product-Name = PBXact") === 0) {
+		$ok = true;
+		break;
+	}
+}
+
+if (!$ok) {
+	print "Not eligible for automatic updates\n";
+	exit;
+}
+
+// Load the update class
+$g = new \Sysadmin\GPG();
+$sigfile = '/var/www/html/admin/modules/sysadmin/module.sig';
+$sig = $g->checkSig($sigfile);
+if (!isset($sig['config']['hash']) || $sig['config']['hash'] !== "sha256") {
+	throw new \Exception("Invalid sig file.. Hash is not sha256 - check $sigfile");
+}
+
+$shouldbe = $sig['hashes']['Updates.class.php'];
+if ($shouldbe !== hash_file("sha256", __DIR__."/../Updates.class.php")) {
+	print "Unable to load Updates class\n";
+	exit;
+}
+include __DIR__."/../Updates.class.php";
+
+$u = new \FreePBX\modules\Sysadmin\Updates();
+$db = \Sysadmin\FreePBX::Database();
+$r = $db->query("SELECT * FROM sysadmin_options")->fetchAll();
+
+$s = array();
+foreach ($r as $row) {
+	$s[$row['key']] = $row['value'];
+}
+
+$getopt = getopt('asm:v:i:u::', array('unlock'));
+
+// What have we been asked to do?
+
+// Set a status. This is along the lines of
+if (isset($getopt['s']) ) {
+	//  -s -v$upgradeversion -i800
+	if(!isset($getopt['v'])) {
+		print "Error 1\n";
+		exit;
+	}
+
+	// We need a status id -or- a message
+	if (isset($getopt['i'])) {
+		set_update_status('msg', array('version' => $getopt['v'], 'status_id' => $getopt['i']));
+	} elseif(isset($getopt['m'])) { //text message
+		set_update_status('msg', array('version' => $getopt['v'], 'status' => $getopt['m']));
+	} else {
+		print "Error 2\n";
+	}
+	exit;
+}
+
+if (isset($getopt['unlock']) || isset($getopt['u'])) {
+	set_update_status('unlock');
+	print "Unlocked.\n";
+	exit;
+}
+
+// If we've made it this far, we are going to update!
+set_update_status('lock');
+
+// Grab our list of updates.
+// TODO: This needs to be redone to not use $u, or, to have $u use curl, rather than fopen.
+$tmpupdates = $u->fetchUpdateList();
+if (isset($tmpupdates['data'])) {
+	$updates = $tmpupdates['data'];
+} else {
+	set_update_status('unlock');
+	throw new \Exception("Error getting updates - got ".json_encode($tmpupdates));
+}
+
+if (!is_array($updates)) {
+	print "No updates available.\n";
+	exit;
+}
+
+// What have we been asked to do?
+if (isset($getopt['a'])) {
+	// Auto. The last one.
+	$versions = array_keys($updates);
+	$version = $versions[count($versions)-1];
+	print "Auto-Upgrading to $version\n";
+} elseif (!isset($getopt['v'])) {
+	print "No version specified, or -a not provided\n";
+	exit;
+} else {
+	$version = $getopt['v'];
+	if (!isset($updates[$version])) {
+		print "Was asked to update to version $version, but it doesn't exist\n";
+		exit;
+	}
+	print "Upgrading to $version.\n";
+}
+
+// Is there a lock?
+// TODO: There was stuff here about continuing if it's locked..
+if (isset($s['upgrade_lock']) && $s['upgrade_lock'] == "true") {
+	// log an error
+	set_update_status('msg', array('version' => $version, 'status_id' => '900'));
+	print "Can't continue, it's locked. Aborting.\n";
+	exit;
+}
+
+
+// We want to do every update, in order that it was recieved,
+// up to the version we were asked to upgrade to!
+$last = false;
+foreach ($updates as $thisvers => $up) {
+	if ($thisvers == $version) {
+		$last = true;
+	}
+	// We're locked
+	set_update_status('lock');
+
+	// Grab the upgrade script
+	set_update_status('msg', array('version' => $version, 'status_id' => '120'));
+	$ch = get_curl_handle($up['url']);
+	$exec = curl_exec($ch);
+	// Did we error?
+	if (!$exec) {
+		set_update_status('msg', array('version' => $version, 'status_id' => '910'));
+		set_update_status('msg', array('version' => $version, 'status' => 'curl Error: '.curl_error($ch)));
+		set_update_status('unlock');
+		throw new \Exception(curl_error($ch));
+	}
+
+	set_update_status('msg', array('version' => $version, 'status_id' => '130'));
+	set_update_status('msg', array('version' => $version, 'status' => "Now running $thisvers script"));
+	echo "  Starting to do $thisvers\n";
+	$ret = run_upgrade($exec);
+	echo "  Completed $thisvers from ".$up['url']."\n";
+
+	@unlink("/var/log/pbx/upgrade/$thisvers.output");
+	file_put_contents("/var/log/pbx/upgrade/$thisvers.output", $ret['output']);
+
+	// crash & burn if the script didnt run sucsessfuly
+	if($ret['ret'] !== 0) {
+		set_update_status('msg', array('version' => $version, 'status_id' => '920'));
+		set_update_status('msg', array('version' => $version, 'status' => "Error running script. See /tmp/upgrade.log"));
+		echo "  ** Error running script: Ouput saved in /tmp/upgrade.log\n";
+		@unlink("/tmp/upgrade.log");
+		$log = "The following upgrade errored at ".time()."\nLoaded script from ".$up['url']."\nIt exited with error code ".$ret['ret']."\n".$ret['output'];
+		file_put_contents("/tmp/upgrade.log", $log);
+		set_update_status('unlock');
+		exit;
+	}
+	set_update_status('msg', array('version' => $version, 'status_id' => '850'));
+
+	// Are we finished?
+	if ($last) {
+		print "Last upgrade script complete!\n";
+		break;
+	}
+}
+
+set_update_status('unlock');
+
+function set_update_status($type, $msg = array()) {
+	$db = \Sysadmin\FreePBX::Database();
+	switch ($type) {
+	case 'lock':
+		$insert = $db->prepare('REPLACE INTO sysadmin_options (`key`, `value`) VALUES (?, ?)');
+		$insert->execute(array("upgrade_lock", "true"));
+		$insert->execute(array("upgrade_start_time", microtime(true)*10000));
+		// If we're a HA machine, set ourselves to Maintenance Mode
+		if (isHaServer()) {
+			set_update_status('msg', array('version' => 'FreePBX-HA', 'status' => 'HA Detected: Enabling Maintance Mode'));
+			`pcs property set maintenance-mode=true`;
+		}
+		return;
+	case 'unlock':
+		$insert = $db->prepare('REPLACE INTO sysadmin_options (`key`, `value`) VALUES (?, ?)');
+		$insert->execute(array("upgrade_lock", "false"));
+
+		// If we're a HA machine, turn off Maintenance Mode
+		if (isHaServer()) {
+			set_update_status('msg', array('version' => 'FreePBX-HA', 'status' => 'HA Detected: Disabling Maintance Mode'));
+			`pcs property set maintenance-mode=false`;
+		}
+		return;
+	case 'msg':
+		$default = array( "time" => microtime(true)*10000, "version" => "", "status" => "", "status_id" => 0,);
+		$params = array();
+		foreach ($default as $k => $n) {
+			if (isset($msg[$k])) {
+				$params[":$k"] = $msg[$k];
+			} else {
+				$params[":$k"] = $default[$k];
+			}
+		}
+
+		$sql = 'INSERT INTO sysadmin_update_log (version, status_id, time, status) VALUES (:version, :status_id, :time, :status)';
+		$insert = $db->prepare($sql);
+		$insert->execute($params);
+		return;
+	}
+}
+
+function sysadmin_get_license() {
+	$lic_file  = '/etc/schmooze/schmooze.zl';
+	return @parse_ini_file($lic_file, false, \INI_SCANNER_RAW);
+}
+
+function sysadmin_get_pbxversion() {
+	// Find our version.
+	$files = array('/etc/schmooze/pbx-version', '/etc/asterisk/pbx-version', '/etc/asterisk/freepbxdistro-version',
+		'/etc/pbxactversion');
+
+	foreach ($files as $f) {
+		if (file_exists($f)) {
+			return trim(file_get_contents($f));
+		}
+	}
+	throw new \Exception("Unknown pbx version!");
+}
+
+function get_curl_handle($url = false) {
+	if (!$url) {
+		throw new \Exception("No URL?");
+	}
+
+	// TODO:: Proxy support
+	$curlopts = array(
+		\CURLOPT_URL => $url,
+		\CURLOPT_RETURNTRANSFER => true,
+		\CURLOPT_SSL_VERIFYPEER => true,
+		\CURLOPT_TIMEOUT => 5,
+	);
+
+	$ch = curl_init();
+	curl_setopt_array($ch, $curlopts);
+	return $ch;
+}
+
+function check_process_running($proc, $pipes) {
+	$q = array("Believe me, I am still alive", "I'm doing Science and I'm still alive", "I feel fantastic and I'm still alive.", "I'm still alive", "This cake is so delicious and moist", "I'm not even angry", "Think of all the things we learned for the people who are still alive");
+
+	$stat = proc_get_status($proc);
+	if (!$stat['running']) {
+		print "Upgrade script complete.\n";
+		fclose($pipes[1]);
+		proc_close($proc);
+		return $stat['exitcode'];
+	} else {
+		$rand = mt_rand(0, count($q)-1);
+		print $q[$rand]."\n";
+		sleep(1);
+		return true;
+	}
+}
+
+function run_upgrade($script) {
+
+	$fds = array(
+		array("pipe", "r"), // stdin
+		array("pipe", "w"), // stdout
+		array("file", "/tmp/upgrade-error.log", "a"), // stderr
+	);
+
+	$proc = proc_open("/bin/bash", $fds, $pipes, "/tmp");
+
+	if (!is_resource($proc)) { // Unable to start!
+		throw new \Exception("Couldn't create upgrade process");
+	}
+
+	// Send our script to bash
+	fwrite($pipes[0], $script);
+	fclose($pipes[0]);
+
+	$tmp = null;
+	$stdout = "Upgrade Started at ".time()."\n";
+
+	while (true) {
+		stream_set_blocking($pipes[1], 0);
+		$r = array($pipes[1]);
+		// If it's been more than 5 seconds without any output, check to see
+		// if it's dead.
+		if (!stream_select($r, $tmp, $tmp, 5)) {
+			$ret = check_process_running($proc, $pipes);
+			if ($ret === true) {
+				sleep(5);
+				continue;
+			} else {
+				return array('ret' => $ret, 'output' => $stdout);
+			}
+		}
+
+		// Did we get any output?
+		$z = stream_get_contents($r[0]);
+		if ($z === "") {
+			// We might be dead.
+			$ret = check_process_running($proc, $pipes);
+			if ($ret === true) {
+				sleep(1);
+				continue;
+			} else {
+				// Yep. We're dead.
+				return array('ret' => $ret, 'output' => $stdout);
+			}
+		} else {
+			print $z;
+			$stdout .= $z;
+		}
+	}
+}
+
+function isHaServer() {
+	if (file_exists("/etc/schmooze/pbx-ha") && file_exists("/etc/drbd.d/asterisk.res")) {
+		return true;
+	}
+	return false;
+}

@@ -1,0 +1,52 @@
+<module>
+	<rawname>faxpro</rawname>
+	<name>Fax Configuration Professional</name>
+	<version>14.0.1.2</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>setup</type>
+	<category>Settings</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. The Fax Pro module adds functionality to the standard
+	FreePBX Fax modue. Outbound faxing can be done through a web interface on your FreePBX system. Simply type in a phone number and upload a PDF. You can optionally set the
+	outgoing PDF to use a locally stored fax coversheet with your faxes; and type in a personal message on the coversheet</description>
+	<changelog>
+		*14.0.1.2* FREEPBX-14515 extend timeout to 60 seconds
+		*14.0.1.1* Merge from 13
+		*14.0.1* UCP 14 upgrades
+	</changelog>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/fax-pro.php</link>
+  	</commercial>
+	<depends>
+		<version>13.0.19</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>userman ge 13.0.63</module>
+		<module>sysadmin ge 2.11.0.47</module>
+		<module>fax ge 13.0.37</module>
+	</depends>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<hooks>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Faxpro" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="delGroup" class="Faxpro" namespace="FreePBX\modules">usermanDelGroup</method>
+			<method callingMethod="addGroup" class="Faxpro" namespace="FreePBX\modules">usermanAddGroup</method>
+			<method callingMethod="updateGroup" class="Faxpro" namespace="FreePBX\modules">usermanUpdateGroup</method>
+			<method callingMethod="myShowPage" class="Faxpro" namespace="FreePBX\modules">usermanShowPage</method>
+			<method callingMethod="delUser" class="Faxpro" namespace="FreePBX\modules">usermanDelUser</method>
+			<method callingMethod="addUser" class="Faxpro" namespace="FreePBX\modules">usermanAddUser</method>
+			<method callingMethod="updateUser" class="Faxpro" namespace="FreePBX\modules">usermanUpdateUser</method>
+		</userman>
+		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
+			<method callingMethod="export" class="Faxpro" namespace="FreePBX\modules">bulkhandlerExport</method>
+			<method callingMethod="import" class="Faxpro" namespace="FreePBX\modules">bulkhandlerImport</method>
+		</bulkhandler>
+	</hooks>
+</module>

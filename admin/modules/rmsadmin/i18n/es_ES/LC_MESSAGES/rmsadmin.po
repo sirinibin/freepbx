@@ -1,0 +1,263 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for rmsadmin
+# Copyright (C) 2008-2017 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-27 19:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "(error fetching information)"
+msgstr ""
+
+msgid "Ack"
+msgstr ""
+
+msgid "Agent upgrade process will continue in the background ..."
+msgstr ""
+
+msgid "Alarm"
+msgstr ""
+
+msgid "Alerts"
+msgstr ""
+
+msgid ""
+"Any changes to contact information affects all notifications from any system "
+"within your organization."
+msgstr ""
+
+msgid "At least one contact email is required!"
+msgstr ""
+
+msgid "Closed"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Configuration updated successfully"
+msgstr ""
+
+msgid "Contact List"
+msgstr ""
+
+msgid ""
+"Contact email addresses for alert notification. Separate each address by "
+"space and/or new line. "
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Detected botched asterisk.conf, attempting to fix it ..."
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+#, php-format
+msgid "Email '%s' is invalid"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+#, php-format
+msgid "Exceeded contact limit of %s!"
+msgstr ""
+
+#, php-format
+msgid "Failed %s the client service (result was %d)"
+msgstr ""
+
+msgid "Failed to fetch contacts: "
+msgstr ""
+
+msgid "Failed to fetch node information: "
+msgstr ""
+
+#, php-format
+msgid "Failed to update configuration: %s"
+msgstr ""
+
+msgid ""
+"If you click the 'Update' button the monitoring agent will be stopped to "
+"perform an update. This may trigger a 'keepalive' alarm that\n"
+"\t              will be cleared within a minute once the monitoring agent "
+"starts again."
+msgstr ""
+
+msgid "Indeterminate"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "Install succeeded!"
+msgstr ""
+
+msgid "Installation failed!"
+msgstr ""
+
+msgid "Installing rmsadmin module"
+msgstr ""
+
+msgid "Invalid node key"
+msgstr ""
+
+#, php-format
+msgid "Maximum %d contacts. Consider using an email group if you need more."
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Node Key"
+msgstr ""
+
+msgid "Normal"
+msgstr ""
+
+msgid "Offline"
+msgstr ""
+
+msgid "Online"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Open RMS Portal"
+msgstr ""
+
+msgid "RMS Client Not Running"
+msgstr ""
+
+msgid "RMS Client Running"
+msgstr ""
+
+msgid "RMS Management"
+msgstr ""
+
+msgid "RMS Monitoring"
+msgstr ""
+
+msgid "RMS client installation is now in progress."
+msgstr ""
+
+#, php-format
+msgid "Received %s response from %s"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Severity"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+#, php-format
+msgid "Succeeded %s the client service"
+msgstr ""
+
+msgid ""
+"The monitoring agent is not running. Click 'Start' to start monitoring your "
+"system."
+msgstr ""
+
+#, php-format
+msgid "The uuid from the key is %s and does not match this machine's uuid %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"This module requires a special monitoring agent to connect to %s.\n"
+"\t\t\t\t\t\t\t\t\tYou can install the agent once you've acquired the "
+"monitoring service at the %s. Once you've acquired the service your node key "
+"will be provided. Enter it below\n"
+"\t\t\t\t\t\t\t\t\tto start the agent installation and provisioning process. "
+"The key is very long. Please use \"Copy\" &amp; \"Paste\" to copy it here."
+msgstr ""
+
+#, php-format
+msgid ""
+"This module requires a special monitoring agent to connect to %s.\n"
+"\t\t\t\t\t\tYou can update or re-install the agent here using your node key "
+"from Sangoma. If you wish to re-install the agent with the existing\n"
+"\t\t\t\t\t\tnode key, leave the key field empty. You can use a new key (e.g "
+"if the previous key was compromised or your service details changed).\n"
+"\t\t\t\t\t\tThe key is very long.  Please use \"Copy\" &amp; \"Paste\" to "
+"copy it here."
+msgstr ""
+
+msgid "Triggering forced monitoring agent upgrade"
+msgstr ""
+
+msgid "Try it Free Today!"
+msgstr ""
+
+msgid "Uninstalling RMS admin module..."
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Unknown error"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update failed!"
+msgstr ""
+
+msgid "Update succeeded!"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+#, php-format
+msgid "You have %s RMS alarms"
+msgstr ""
+
+msgid "You have one RMS alarm"
+msgstr ""
+
+msgid "You should go to the RMS Management module to see alarm details"
+msgstr ""
+
+msgid "restarting"
+msgstr ""
+
+msgid "starting"
+msgstr ""
+
+msgid "stopping"
+msgstr ""

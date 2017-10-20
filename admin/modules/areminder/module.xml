@@ -1,0 +1,82 @@
+<module>
+	<rawname>areminder</rawname>
+	<name>Appointment Reminder</name>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.	Please visit www.schmoozecom.com/oss.php Appointment Reminder module for FreePBXis a unique way to automate
+	appointment confirmations, cancellations and reschedules. By simply specifying numbers and names to be called your PBX will automatically call at specified times and allow
+	recipients to confirm / cancel / reschedule appointments. The module gives you the flexibility to control all details of the calls from rate limiting to retry attempts and days
+	ahead to notify of an appointment. You have the ability to simply load a CSV list of numbers to call, or even add numbers and names manually. On the fly modifications can be
+	made to any Appointment Reminder list to allow for total flexibility. </description>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>14.0.1.3</version>
+	<category>Applications</category>
+	<menuitems>
+		<areminder>Appointment Reminder</areminder>
+	</menuitems>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/appointment-reminder.php</link>
+	</commercial>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>ttsengines ge 2.10.0</module>
+		<version>13.0.5</version>
+	</depends>
+	<location>release/2.11/areminder-2.11.0.2.tgz</location>
+	<info />
+	<changelog>
+		*14.0.1.3* FREEPBX-14576 Appointment Enable + disable button under UCP dashboard not functioning.
+		*14.0.1.2* Merge from 13.0.10 and above
+		*14.0.1* UCP 14
+		*13.0.10.5* Internal Fixes
+		*13.0.10.4* FREEPBX-13995 Fix outbound calling QA NOTE: This fix requires changes to AGI scripts a fwconsole reload is requires
+		*13.0.10.3* FREEPBX-13895 Appointment reminder Call not dialing - No such extension/context
+		*13.0.10.2* FREEPBX-13660 reset button take no visible action
+		*13.0.10.1* Sounds are obtained through Sound Languages
+		*13.0.10* PHP 5.6 Support
+		*13.0.9* Add sound languages: it,fr,en_GB
+		*13.0.8* FREEPBX-12303 The week starts on monday for IS0-8601
+		*13.0.7* Dont license certain files
+		*13.0.6* FREEPBX-11738 Appointment reminders leaving cutoff messages
+		*13.0.5* UCP additions finalized
+		*13.0.4.9* Check to see if is empty first
+		*13.0.4.8* Fix module xml
+		*13.0.4.7* UCP Interface for Appointment Reminders
+		*13.0.4.6* Remove en_US Translations
+		*13.0.4.5* FREEPBX-10846 fix missing status email and custom prompts
+		*13.0.4.4* FREEPBX-11318 Add https support to areminders
+		*13.0.4.3* FREEPBX-10846 Reminder calls placed from Appointment Reminders are silent and dont hang up
+		*13.0.4.2* FREEPBX-9951 Japanese language prompts
+		*13.0.4.1* FREEPBX-10697 fix prompt
+		*13.0.4* Style cleanup and floating menu
+		*13.0.3.2* FREEPBX-10331 new sound file from Allison
+		*13.0.3.1* FREEPBX-10253 Spelling update
+		*13.0.3* FREEPBX-9766 appointment reminder - no calls and cant save global max calls
+		*13.0.2* Version bump Beta
+		*13.0.1alpha4* Add Spanish prompts
+		*13.0.1alpha3* FREEPBX-9469 Can not create a Appointment REminder in 13
+		*13.0.1alpha1* Visual changes for 13
+	</changelog>
+	<hooks>
+		<ucp class="Ucp">
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="constructModuleConfigPages">ucpConfigPage</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="addUser">ucpAddUser</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="updateUser">ucpUpdateUser</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="delUser">ucpDelUser</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="addGroup">ucpAddGroup</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="updateGroup">ucpUpdateGroup</method>
+			<method namespace="FreePBX\Modules" class="Areminder" callingMethod="delGroup">ucpDelGroup</method>
+		</ucp>
+		<sysadmin class="Sysadmin" namespace="FreePBX\modules">
+			<method class="Areminder" namespace="FreePBX\modules" callingMethod="getModuleLicenseInformation">sendModuleLicenseInformation</method>
+		</sysadmin>
+	</hooks>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<md5sum>101071e64ffe511b7735dc78d797e93c</md5sum>
+</module>

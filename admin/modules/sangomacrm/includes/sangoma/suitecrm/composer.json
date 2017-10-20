@@ -1,0 +1,40 @@
+{
+	"name": "sangoma/suitecrm",
+	"description": "A SuiteCRM Library",
+	"homepage": "http://git.freepbx.org/projects/SHMZL/repos/suitecrm",
+	"license": "Commercial",
+	"authors": [
+		{
+			"name": "Bryan Walters",
+			"email": "bwalters@sangoma.com"
+		},
+		{
+			"name": "Andrew Nagy",
+			"email": "anagy@sangoma.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "ssh://git@git.freepbx.org/shmzl/portal_log_trace.git"
+		}
+	],
+	"require": {
+		"sangoma/portal_log_trace": "*",
+		"lib-curl": "*",
+		"php": ">=5.3",
+		"rmccue/requests": "^1.6"
+	},
+	"require-dev": {
+		"phpunit/phpunit": ">=5.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Sangoma\\SuiteCRM\\": "src/"
+		}
+	},
+	"scripts": {
+		"test": "phpunit utests/"
+	},
+	"minimum-stability": "dev"
+}

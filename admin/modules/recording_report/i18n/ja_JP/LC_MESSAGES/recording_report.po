@@ -1,0 +1,180 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for recording_report
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-10 10:32-0800\n"
+"PO-Revision-Date: 2016-08-08 13:52+0200\n"
+"Last-Translator: Kenichi <k.kitani@qloog.com>\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/"
+"recording_report/ja_JP/>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
+
+msgid "),longDateFormat:{LT:"
+msgstr ""
+
+msgid "),monthsShort:"
+msgstr ""
+
+msgid "),weekdays:"
+msgstr ""
+
+msgid "),weekdaysMin:"
+msgstr ""
+
+msgid "),weekdaysShort:"
+msgstr ""
+
+msgid "<br />Archives are created on the 1st of every month."
+msgstr ""
+
+msgid ""
+"<br />Only three archives are stored in the system.  As archives are "
+"created, the oldest archive is deleted."
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "All Days"
+msgstr ""
+
+msgid "Archive Limit"
+msgstr ""
+
+msgid "Archive all recordings older than X Months"
+msgstr ""
+
+msgid ""
+"COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www."
+"schmoozecom.com/oss.php - Displays various information related to the "
+"voicemail system. This is a non standard module and requies a license for it "
+"to work"
+msgstr ""
+"有償モジュール。ご利用するにはライセンスの購入が必要です。詳しくは www."
+"schmoozecom.com/oss.php をご覧ください。ボイスメールシステムの様々な情報をレ"
+"ポート形式で表示します"
+
+msgid "Call Recording Report"
+msgstr "通話録音レポート"
+
+msgid "Call Recording Reports"
+msgstr ""
+
+msgid "Call Recordings"
+msgstr "通話録音"
+
+msgid "Choose a Month"
+msgstr ""
+
+msgid "Choose a Year"
+msgstr ""
+
+msgid "Conference"
+msgstr "音声会議"
+
+msgid "Date - Time"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+msgid "Direct"
+msgstr ""
+
+msgid "Download Archive"
+msgstr ""
+
+#, php-format
+msgid ""
+"Download Archive %s - Due to the filesize of this file please visit %s on "
+"your server"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid ""
+"Email address reminders are sent from. (*Note: Updates SysAdmin from "
+"address.)"
+msgstr ""
+
+msgid "Email address to send reminders to."
+msgstr ""
+
+msgid "FROM ADDRESS NOT SET - ARCHIVES WILL NOT WORK"
+msgstr ""
+
+msgid "File Deleted"
+msgstr ""
+
+msgid "File does not exist"
+msgstr ""
+
+msgid "From Email"
+msgstr ""
+
+msgid "Latest Records"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "No Archives availible"
+msgstr ""
+
+msgid "Outbound"
+msgstr ""
+
+msgid "Play"
+msgstr "再生"
+
+msgid "Queue"
+msgstr ""
+
+msgid "Recording Archives"
+msgstr ""
+
+msgid "Reminder Email"
+msgstr ""
+
+msgid "Reports"
+msgstr "レポート"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Source"
+msgstr ""
+
+msgid ""
+"The archives on this page can be downloaded and opened using a common tool "
+"like Winzip, or 7-Zip."
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+#, perl-format
+msgid ""
+"You are missing support for playback in this browser. To fully support HTML5 "
+"browser playback you will need to install programs that can not be "
+"distributed with the PBX. If you'd like to install the binaries needed for "
+"these conversions click <a href='%s'>here</a>"
+msgstr ""
+
+#~ msgid ""
+#~ "This module will send you reminders to download your call recording "
+#~ "archives."
+#~ msgstr "通話録音のアーカイブをダウンロードするリマインダーを送信します。"

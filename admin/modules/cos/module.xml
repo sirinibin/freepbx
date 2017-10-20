@@ -1,0 +1,62 @@
+<module>
+	<rawname>cos</rawname>
+	<name>Class of Service</name>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<repo>commercial</repo>
+	<version>13.0.11.3</version>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<license>Commercial</license>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/classofservice.php</link>
+	</commercial>
+	<category>Admin</category>
+	<description>COMMERCIAL MODULE, REQUIRES A LICENSE.
+		Class of Service allows you to limit access, per extension, to feature codes, trunks, queues, ring groups, etc.</description>
+	<changelog>
+		*13.0.11.3* FREEPBX-14316 COS name with space not working
+		*13.0.11.2* Internal fixes
+		*13.0.11.1* FREEPBX-13507 CoS routes not being respected when using Follow Me
+		*13.0.11* Support for PHP 5.6
+		*13.0.10* Remove en_US Translations
+		*13.0.9* FREEPBX-10889 Dont show user created groups as they will always be denied
+		*13.0.8* Slideout menu
+		*13.0.7.1* Fix potential un-init'ed variables
+		*13.0.7* FREEPBX-10209 htmlentities need to use UTF-8
+		*13.0.6* Properly display routes if we have any and clean up localization if extensionroutes is not installed or licensed.
+		*13.0.5* All sections working.
+		*13.0.4.1* FREEPBX-9875 fix licensing HARDER
+		*13.0.4* FREEPBX-9655 fix licensing
+		*13.0.3* Add missing tabs from transition to 13
+		*13.0.2* Version bump Beta
+		*13.0.1alpha2* FREEPBX-9473 Class of Service Items Overflow and other display issues
+		*13.0.1alpha1* Visuals
+		*12.0.18* Only check RingGroups that need to be checked.
+		*12.0.17* FREEPBX-8669 - Fix logic error
+		*12.0.16* FREEPBX-8301 dont explode if contactmanager is not installed
+		*12.0.15* Add Contact Manager groups.
+		*12.0.14* Skip CoS checks on ALL external calls
+		*12.0.13* Check for sysadmin first before attempting to ask for license
+		*12.0.12* Resolve issue with DIDs with no Routes causing crash
+		*12.0.11* Licensing updates
+		*12.0.9* Add Time Condition and Day/Night Toggle support.
+		*12.0.8* Change Feature Codes to display name
+		*12.0.7* Ensure 'Reload' bar is triggered.
+		*12.0.6* Initial Release
+	</changelog>
+	<depends>
+		<module>core ge 12.0.1alpha9</module>
+		<module>framework ge 13.0.5</module>
+		<module>sysadmin ge 13.0.69</module>
+		<phpversion>5.3.0</phpversion>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+	</depends>
+	<menuitems>
+		<cos>Class of Service</cos>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location />
+	<md5sum />
+</module>

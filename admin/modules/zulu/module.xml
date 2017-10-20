@@ -1,0 +1,165 @@
+<module>
+	<rawname>zulu</rawname>
+	<repo>commercial</repo>
+	<name>Zulu</name>
+	<version>14.0.2.8</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>paid</type>
+		<link>//www.freepbx.org/zulu</link>
+	</commercial>
+	<changelog>
+		*14.0.2.8* FREEPBX-15103 Use variable for dashboard device exclusion
+		*14.0.2.7* FREEPBX-14223
+		*14.0.2.6* Fix bug on user creation
+		*14.0.2.5* Bump
+		*14.0.2.4* Use PM2 install
+		*14.0.23* Depend on core
+		*14.0.2.2* Merge from 13
+		*14.0.2.1* Require Process Management Module
+		*14.0.2* Merge from 13
+		*14.0.1alpha1* Intial Release
+		*13.0.50.13* Let install create the directory as the asterisk user
+		*13.0.50.12* Require newest framework
+		*13.0.50.10* Check npm-cache install
+		*13.0.50.3-8* Permissions checks
+		*13.0.50.2* FREEPBX-14161 set timeout on stop. FREEPBX-14155 attempt to check access in more creative ways
+		*13.0.50.1* FREEPBX-13914 Make installs faster (after this install)
+		*13.0.50* Require new node library
+		*13.0.49.12.1* Zulu doesn't screenpop (nor URLpop) on ring-group
+		*13.0.49.12* FREEPBX-13938 fix array error
+		*13.0.49.11* Fix reloads if route is deleted
+		*13.0.49.10* Install even if process fails
+		*13.0.49.9* Remove the chown command because the hooks folder permissions are set correctly
+		*13.0.49.8* Throw exception when Asterisk manager connection dies
+		*13.0.49.7* FREEPBX-13793 Logrotate additions
+		*13.0.49.6* Fixed: Not writing out dialplan
+		*13.0.49.5* FREEPBX-13757 fix starts on slow systems
+		*13.0.49.4* FREEPBX-13712 Remove linked extension when deleted
+		*13.0.49.3* Be more clear when Zulu Server is disabled
+		*13.0.49.2* Fix licensing issues
+		*13.0.49.1* Tweak to start and stop
+		*13.0.49* Better process management
+		*13.0.48* PHP 5.6 Updates
+		*13.0.47.5* Automatically restart server when it crashes
+		*13.0.47.4* Softphone creation fixes
+		*13.0.47.3* No softphone on certain Asterisks
+		*13.0.47.2* Cleanup
+		*13.0.47.1* Add back in installer scripts
+		*13.0.47* Look for new Stun Server settings in Asterisk SIP Settings
+		*13.0.46* Use threadids for sms messages
+		*13.0.45.4* FREEPBX-13478 uninstalling zulu module should remove all zulu extensions
+		*13.0.45.3* Send out the right faxid...
+		*13.0.45.2* Send out faxid to the client when sending a fax
+		*13.0.45.1* Require newest framework
+		*13.0.45* Support new client infrastructure
+		*13.0.44* FREEPBX-12489 Zulu download from UCP System Adimin tab
+		*13.0.43* Support backlogged messages when clients are offline
+		*13.0.42* More verbose error reporting on database connect failures
+		*13.0.41* FREEPBX-12018 Properly remove queues when they are deleted
+		*13.0.40* Fix broken reloads when inbound routes are deleted
+		*13.0.39* Auto-Answer calls originated from Zulu (Option to turn off in GUI)
+		*13.0.38* FREEPBX-11739 pull replacements from Leg A of call not Leg B
+		*13.0.37* FREEPBX-11682 FREEPBX-11684
+		*13.0.36* Remove en_US Translations
+		*13.0.35* Support ringgroups for Popups
+		*13.0.34* Fix issues with FREEPBX-11650, allow ring group and hunt group explicit definitions
+		*13.0.33* Missing brackets
+		*13.0.32* FREEPBX-11674 cant apply changes after queue deleted, FREEPBX-11650 evaluate strings from direct extensions
+		*13.0.31* Add commercial tags to module.xml
+		*13.0.30* More FREEPBX-11539
+		*13.0.29* Move to the right repo
+		*13.0.28* FREEPBX-11539 Deleting inbound route breaks reload
+		*13.0.27* Run dir permission fixes
+		*13.0.26* Reverse the input
+		*13.0.25* Dont attempt to start if not licensed
+		*13.0.24* Cleanup workarounds and useless code
+		*13.0.23* Fix url type
+		*13.0.21* User Manager assigning issue
+		*13.0.20* More debugging
+		*13.0.19* Libs have to exist to be able to stop before start in install
+		*13.0.18* Make sure null is blank for javascripting
+		*13.0.17* Fix setting null as the presence message
+		*13.0.16* Fixes
+		*13.0.15* Cleanup
+		*13.0.14* Address starting and stopping issues through GUI
+		*13.0.13* Try stopping earlier, before updating
+		*13.0.12* Finishing touches on extension pops
+		*13.0.11* Call pops for extensions
+		*13.0.10* Move Zulu call lower for get starting IDs
+		*13.0.9* ZULU-15 Allow setting defaults per extension
+		*13.0.8* ZULU-51 Call notification from Outbound Callee
+		*13.0.7* ZULU-48 which fixes an issue with the licensing hook
+		*13.0.6* Presence in Asterisk 11
+		*13.0.5* Undefined errors among other things
+		*13.0.4* Tweaks to processor and Asterisk 11 issues
+		*13.0.3* Stop all no matter what
+		*13.0.2* Public Preview
+		*13.0.1* Internal Release
+	</changelog>
+	<category>Admin</category>
+	<description>Zulu bridges the gap between your PBX and your desktop. Providing unified communications directly in the applications you use daily</description>
+	<menuitems>
+		<zulu>Zulu</zulu>
+	</menuitems>
+	<depends>
+		<version>14.0.0</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.4</module>
+		<module>userman ge 13.0.75.4</module>
+		<module>pm2 ge 13.0.3.8</module>
+		<module>certman ge 13.0.36.6</module>
+		<module>core ge 14.0.1rc1.8</module>
+	</depends>
+	<supported>
+			<version>14.0</version>
+	</supported>
+	<hooks>
+		<core class="Core" namespace="FreePBX\modules">
+			<method callingMethod="hookTabs" class="Zulu" namespace="FreePBX\modules">coreDIDHook</method>
+			<method callingMethod="delUser" class="Zulu" namespace="FreePBX\modules">delUser</method>
+		</core>
+		<queues class="Queues" namespace="FreePBX\modules">
+			<method callingMethod="hookTabs" class="Zulu" namespace="FreePBX\modules">tabhookQueues</method>
+		</queues>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="delGroup" class="Zulu" namespace="FreePBX\modules">usermanDelGroup</method>
+			<method callingMethod="addGroup" class="Zulu" namespace="FreePBX\modules">usermanAddGroup</method>
+			<method callingMethod="updateGroup" class="Zulu" namespace="FreePBX\modules">usermanUpdateGroup</method>
+			<method callingMethod="delUser" class="Zulu" namespace="FreePBX\modules">usermanDelUser</method>
+			<method callingMethod="addUser" class="Zulu" namespace="FreePBX\modules">usermanAddUser</method>
+			<method callingMethod="updateUser" class="Zulu" namespace="FreePBX\modules">usermanUpdateUser</method>
+			<method callingMethod="myShowPage" class="Zulu" namespace="FreePBX\modules">usermanShowPage</method>
+		</userman>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="Zulu" namespace="FreePBX\modules">dashboardService</method>
+		</dashboard>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Zulu" namespace="FreePBX\modules">startFreepbx</method>
+		</framework>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Zulu" namespace="FreePBX\modules">stopFreepbx</method>
+		</framework>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Zulu" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<sysadmin class="Sysadmin" namespace="FreePBX\modules">
+			<method callingMethod="getModuleLicenseInformation" class="Zulu" namespace="FreePBX\modules">sendModuleLicenseInformation</method>
+		</sysadmin>
+		<ucp class="Ucp">
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="constructModuleConfigPages">ucpConfigPage</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="addUser">ucpAddUser</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="updateUser">ucpUpdateUser</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="delUser">ucpDelUser</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="addGroup">ucpAddGroup</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="updateGroup">ucpUpdateGroup</method>
+			<method namespace="FreePBX\Modules" class="Zulu" callingMethod="delGroup">ucpDelGroup</method>
+		</ucp>
+		<dashboard class="Dashboard" namespace="">
+			<method class="Zulu" namespace="FreePBX\Modules" callingMethod="extIgnoreList">dashboardIgnoreExt</method>
+		</dashboard>
+	</hooks>
+</module>

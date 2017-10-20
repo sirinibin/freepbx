@@ -1,0 +1,103 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sng_mcu
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-13 19:58-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "API Token"
+msgstr ""
+
+msgid "Admin"
+msgstr ""
+
+msgid "Already exists"
+msgstr ""
+
+msgid "Announcement"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Does this connection require the use of an API token?"
+msgstr ""
+
+msgid "Greeting to be played on entry to the Ivr."
+msgstr ""
+
+msgid "Here"
+msgstr ""
+
+msgid "MCU URL"
+msgstr ""
+
+msgid "Modules to setup and manage Sangoma MCU"
+msgstr ""
+
+#, php-format
+msgid "More information on the Sangoma MCU can be found %s"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Pair MCU"
+msgstr ""
+
+msgid "Pair Sangoma MCU"
+msgstr ""
+
+msgid ""
+"Provide the API token that is configured in the Sangoma MCU Web "
+"Administration Interface"
+msgstr ""
+
+msgid "Requires API token"
+msgstr ""
+
+msgid "Sangoma MCU"
+msgstr ""
+
+#, php-format
+msgid "Sangoma MCU Host: %s, Name: %s Ext: %s"
+msgstr ""
+
+msgid "Sumbit"
+msgstr ""
+
+msgid "This module is not used if you do not own a Sangoma MCU"
+msgstr ""
+
+msgid "This module is used to setup and manage the Sangoma MCU"
+msgstr ""
+
+msgid "URL to MCU Device"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "checking for sync field.."
+msgstr ""

@@ -1,0 +1,131 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sms
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-28 16:56-0700\n"
+"PO-Revision-Date: 2017-03-03 14:59+0200\n"
+"Last-Translator: Franck <fdanard@sangoma.com>\n"
+"Language-Team: French <http://weblate.freepbx.org/projects/fpbxc/sms/fr_FR/"
+">\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.4\n"
+
+msgid "Adaptor not loaded"
+msgstr "Adaptateur non chargé"
+
+msgid "Are you sure you wish to delete this conversation?"
+msgstr "Êtes-vous sur de vouloir supprimer cette conversation ?"
+
+msgid "Body"
+msgstr "Corps"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Connectivity"
+msgstr "Connectivité"
+
+msgid "Controls"
+msgstr "Contrôles"
+
+#, perl-format, php-format
+msgid "Conversation Detail with %s"
+msgstr "Détail de la conversation avec %s"
+
+msgid "DID"
+msgstr "DID"
+
+msgid "Delete"
+msgstr ""
+
+msgid "Direction"
+msgstr "Direction"
+
+msgid "File Size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "File size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "Initiate"
+msgstr ""
+
+msgid "Last Message Date"
+msgstr "Date du dernier message"
+
+msgid "Loading"
+msgstr ""
+
+msgid "Me"
+msgstr "Moi"
+
+#, perl-format
+msgid "New Message from %s"
+msgstr "Nouveau message de %s"
+
+msgid "Received"
+msgstr "Reçu"
+
+msgid "SMS"
+msgstr "SMS"
+
+#, php-format
+msgid "SMS for %s"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Envoyer message"
+
+msgid "Send SMS"
+msgstr "Envoyer SMS"
+
+msgid "Sent"
+msgstr "Envoyé"
+
+msgid "Start Conversation"
+msgstr ""
+
+msgid ""
+"This module is used to configure and manage SMS chat interfaces inside of "
+"the new UCP."
+msgstr ""
+"Ce module sert à configurer et gérer l'interface les SMS à l'intérieur du "
+"nouveau UCP."
+
+msgid "Time"
+msgstr "Heure"
+
+msgid "To"
+msgstr "À"
+
+msgid "Unsupported file format"
+msgstr "Format de fichier non supporté"
+
+msgid "Unsupported file type"
+msgstr ""
+
+#~ msgid "Invalid Number"
+#~ msgstr "Numéro invalide"
+
+#~ msgid "New SMS"
+#~ msgstr "Nouveau SMS"
+
+#~ msgid "Message could not be delivered"
+#~ msgstr "Le message n'a pu être acheminé"
+
+#~ msgid "System"
+#~ msgstr "Système"
+
+#~ msgid "There was an error sending this message: "
+#~ msgstr "Il y a eu une erreur lors de l'envoi de ce message: "

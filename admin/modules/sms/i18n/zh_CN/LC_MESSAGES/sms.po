@@ -1,0 +1,120 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sms
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-28 16:56-0700\n"
+"PO-Revision-Date: 2015-11-23 13:52+0200\n"
+"Last-Translator: james <zhulizhong@gmail.com>\n"
+"Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
+"freepbx/sms/zh_CN/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+msgid "Adaptor not loaded"
+msgstr ""
+
+msgid "Are you sure you wish to delete this conversation?"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Connectivity"
+msgstr "通信接口连接"
+
+msgid "Controls"
+msgstr "控制"
+
+#, perl-format, php-format
+msgid "Conversation Detail with %s"
+msgstr ""
+
+msgid "DID"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "File Size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "File size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "Initiate"
+msgstr ""
+
+msgid "Last Message Date"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Me"
+msgstr ""
+
+#, perl-format
+msgid "New Message from %s"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "SMS"
+msgstr ""
+
+#, php-format
+msgid "SMS for %s"
+msgstr ""
+
+msgid "Send Message"
+msgstr ""
+
+msgid "Send SMS"
+msgstr ""
+
+msgid "Sent"
+msgstr ""
+
+msgid "Start Conversation"
+msgstr ""
+
+msgid ""
+"This module is used to configure and manage SMS chat interfaces inside of "
+"the new UCP."
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "Unsupported file format"
+msgstr ""
+
+msgid "Unsupported file type"
+msgstr ""
+
+#~ msgid "System"
+#~ msgstr "系统"
+
+#~ msgid "Search"
+#~ msgstr "查询"

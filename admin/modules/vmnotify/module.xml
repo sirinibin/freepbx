@@ -1,0 +1,56 @@
+<module>
+	<rawname>vmnotify</rawname>
+	<name>Voicemail Notifications</name>
+	<version>13.0.18.2</version>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. You can configure a new Voicemail Notification to
+	monitor a mailbox for new messages. When a new message is left in that mailbox the system will call the recipients listed below until one of them accepts responsibility for
+	the message. All numbers in the first priority will be called simultaneously, then if nobody has accepted the message it will continue to call all recipients in the next
+	higher priority until it runs out of priorities to call. It will then retry the entire list if configured to do so.</description>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/vm-notify.php</link>
+  </commercial>
+	<changelog>
+		*13.0.18.2* Internal Fixes
+		*13.0.18.1* More 5.6 updates
+		*13.0.18* PHP 5.6 Updates
+		*13.0.17* FREEPBX-12923 Fix dropdown in editmode to not allow changes
+		*13.0.16* FREEPBX-12676 set vmnotify-main to use TRUNK_RING_TIMER
+		*13.0.15* Add sound languages: it,fr,en_GB
+		*13.0.14* FREEPBX-12304 Voicemail Notification not alerting
+		*13.0.13* FREEPBX-11788 voicemail notifications module inoperative
+		*13.0.12* More debug
+		*13.0.11* Fix message delivery
+		*13.0.10* FREEPBX-10058 Add the ability to not delete voicemails and just mark them as OLD. The default behavior is to act as the module always has and delete. The user must explicitly set this to make messages save
+		*13.0.9* Remove en_US Translations
+		*13.0.8* FREEPBX-9951 Japanese language prompts
+		*13.0.7* Slideout menu
+		*13.0.6* FREEPBX-9830
+		*13.0.5* FREEPBX-9582, FREEPBX-9583, fix variables and add missing tooltip
+		*13.0.4* FREEPBX-9548 No Apply Config for Voicemail Notification
+		*13.0.3* VM Notify Reset button not working
+		*13.0.2* Version bump Beta
+		*13.0.1alpha4* Add Spanish prompts
+		*13.0.1alpha3* FREEPBX-9416 - Fix logic issue causing blank lines to be used as recipients
+		*13.0.1alpha1* Visual Changes
+	</changelog>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<version>13.0.6</version>
+	</depends>
+	<menuitems>
+		<vmnotify>Voicemail Notifications</vmnotify>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location>release/2.11/vmnotify-2.11.0.0.tgz</location>
+	<md5sum>95896fbb590050f6c6e9dea8a1f5398f</md5sum>
+</module>

@@ -1,0 +1,13 @@
+{
+  "name": "xmpp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.82.tgz"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "Commercial",
+  "private": true
+}

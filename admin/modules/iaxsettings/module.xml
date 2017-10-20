@@ -1,0 +1,20 @@
+<module>
+	<rawname>iaxsettings</rawname>
+	<repo>standard</repo>
+	<name>Asterisk IAX Settings</name>
+	<version>14.0.1</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
+	<license>AGPLv3</license>
+	<category>Settings</category>
+	<menuitems>
+		<iaxsettings>Asterisk IAX Settings</iaxsettings>
+	</menuitems>
+	<description>Use to configure Various Asterisk IAX Settings in the General section of iax.conf.</description>
+	<changelog>
+		*14.0.1* FREEPBX-14263 for 14
+	</changelog>
+	<supported>
+		<version>14.0</version>
+	</supported>
+</module>

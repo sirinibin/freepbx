@@ -1,0 +1,22 @@
+#!/usr/bin/php
+<?php
+require '/usr/lib/sysadmin/includes.php';
+
+// Copied from install-sslkeys. We can't just run it, as it may be
+// tampered..
+$files = array("crt" => "webserver.crt", "key" => "webserver.key");
+
+$dest = "/etc/httpd/pki";
+if (!is_dir($dest)) {
+	mkdir($dest);
+}
+
+foreach ($files as $e => $f) {
+	$src = "/etc/httpd/pki/$f";
+	$dest = "/etc/asterisk/keys/sysadmin.".$e;
+	if (file_exists($src) && !file_exists($dest)) {
+		copy($src,$dest);
+		chown($dest,"asterisk");
+		chmod($dest,0777);
+	}
+}

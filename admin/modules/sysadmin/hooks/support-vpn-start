@@ -1,0 +1,60 @@
+#!/usr/bin/php
+<?php
+
+// load license
+require "/usr/lib/sysadmin/license_loader.php";
+require "/usr/lib/sysadmin/licensed.php";
+
+// If we don't have a valid license file, sysadmin_get_license() won't exist.
+if (!function_exists('sysadmin_get_license')) {
+        function sysadmin_get_license() {
+                return false;
+        }
+}
+
+$lic = sysadmin_get_license();
+
+if (!isset($lic['backup_username']) || !isset($lic['backup_password'])) {
+	print "No backup username or password in licence file, can't update\n";
+	exit;
+}
+
+if (!isset($lic['vpn_ip'])) {
+	print "VPN Not configured for this deployment\n";
+	exit;
+}
+
+$dir            = '/etc/openvpn/deploymentvpn/';
+$conf           = '/etc/openvpn/sysadmin_support.conf';
+$crt            = $dir . $lic['deploymentid'] . '.crt';
+$key            = $dir . $lic['deploymentid'] . '.key';
+$ca             = $dir . 'ca.crt';
+
+
+$server         = 'backup1.schmoozecom.net';
+$ftp            = ftp_connect($server);
+$ftp_auth       = ftp_login($ftp, $lic['backup_username'], $lic['backup_password']);
+ftp_pasv($ftp, true);
+ftp_get($ftp,  $conf, $lic['deploymentid'] . '.conf', FTP_BINARY);
+ftp_get($ftp,  $crt, $lic['deploymentid'] . '.crt', FTP_BINARY);
+ftp_get($ftp,  $key, $lic['deploymentid'] . '.key', FTP_BINARY);
+ftp_get($ftp,  $ca, 'ca.crt', FTP_BINARY);
+ftp_close($ftp);
+
+if (!file_exists($conf) || !file_exists($crt) || !file_exists($key) || !file_exists($ca)) {
+	echo "Could not download files, aborting!\n";
+	exit;
+}
+
+if (file_exists("usr/bin/systemctl")) {
+	`systemctl start openvpn@syadmin_support`;
+} else {
+	`service openvpn restart`;
+}
+
+sleep(10);
+
+$vpnip = $lic['vpn_ip'];
+
+`/sbin/route add 10.4.2.6 gw $vpnip`;
+

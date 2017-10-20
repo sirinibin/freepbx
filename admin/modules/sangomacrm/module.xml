@@ -1,0 +1,75 @@
+<module>
+	<rawname>sangomacrm</rawname>
+	<repo>commercial</repo>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php - Links your PBX to your CRM</description>
+	<name>Customer Relationship Management Link</name>
+	<version>13.0.1.22</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>paid</type>
+		<link>//www.freepbx.org/crm</link>
+	</commercial>
+	<category>Settings</category>
+	<menuitems>
+		<sangomacrm>CRM Settings</sangomacrm>
+	</menuitems>
+	<changelog>
+		*13.0.1.22* FREEPBX-14899 Fix Autoloaders
+		*13.0.1.21* FREEPBX-13700 Add ZohoCRM support
+		*13.0.1.20* FREEPBX-14769 Additional sanity checks
+		*13.0.1.19* FREEPBX-14041 module admin purchase for CRM
+		*13.0.1.18* FREEPBX-14435 Add URL validation
+		*13.0.1.17* FREEPBX-14769 - give better error message on whoops error, FREEPBX-14776 - clear data on uninstall
+		*13.0.1.16* FREEPBX-14762 - fix Salesforce user cache not getting updated
+		*13.0.1.15* Update hook
+		*13.0.1.14* Adjust Autoloaders
+		*13.0.1.13* FREEPBX-13569 whichs adds salesforce support and FREEPBX-14732 which updates curl for newer TLS support
+		*13.0.1.12* FREEPBX-14356 not generating outbound routes
+		*13.0.1.11* FREEPBX-14124 Unable to reload if sangomacrm is installed and no outbound routes defined
+		*13.0.1.10* Fix constructor
+		*13.0.1.9* Resolve issue with setting call direction later
+		*13.0.1.8* Bug fixes to the driver
+		*13.0.1.7* Test SSH using GUI entries not DB entries
+		*13.0.1.6* Add need reload function for apply changes
+		*13.0.1.5* Home directory fix
+		*13.0.1.4* Bug fixes
+		*13.0.1.3* More cleanup
+		*13.0.1.2* Cleanup
+		*13.0.1.1* Don't crash on inital install
+		*13.0.1* Inital release
+	</changelog>
+	<depends>
+		<version>13.0.190.3</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>zulu ge 13.0.45</module>
+		<module>cdr</module>
+		<module>cel</module>
+	</depends>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<hooks>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Sangomacrm" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="delUser" class="Sangomacrm" namespace="FreePBX\modules">usermanDelUser</method>
+			<method callingMethod="addUser" class="Sangomacrm" namespace="FreePBX\modules">usermanAddUser</method>
+			<method callingMethod="updateUser" class="Sangomacrm" namespace="FreePBX\modules">usermanUpdateUser</method>
+			<method callingMethod="myShowPage" class="Sangomacrm" namespace="FreePBX\modules">usermanShowPage</method>
+		</userman>
+		<sysadmin class="Sysadmin" namespace="FreePBX\modules">
+			<method callingMethod="getModuleLicenseInformation" class="Sangomacrm" namespace="FreePBX\modules">sendModuleLicenseInformation</method>
+		</sysadmin>
+		<zulu class="Zulu" namespace="FreePBX\modules">
+			<method callingMethod="displayCallpopOptions" class="Sangomacrm" namespace="FreePBX\modules">displayCallpopOptions</method>
+			<method callingMethod="processCallpopType" class="Sangomacrm" namespace="FreePBX\modules">processCallpopType</method>
+			<method callingMethod="processCallpopValue" class="Sangomacrm" namespace="FreePBX\modules">processCallpopValue</method>
+		</zulu>
+	</hooks>
+	<location>release/2.11/cdr-2.11.0.4.tgz</location>
+	<md5sum>31321560b9a2b33615d20239544812a5</md5sum>
+</module>

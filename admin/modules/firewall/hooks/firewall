@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+// vim: :set filetype=php tabstop=4 shiftwidth=4 autoindent smartindent:
+
+require '/usr/lib/sysadmin/includes.php';
+$g = new \Sysadmin\GPG();
+$sigfile = __DIR__."/../module.sig";
+try {
+
+	$sig = $g->checkSig($sigfile);
+	if (!isset($sig['config']['hash']) || $sig['config']['hash'] !== "sha256") {
+		throw new \Exception("Invalid sig file.. Hash is not sha256 - check $sigfile");
+	}
+
+	// Check the hash of the validator, before we include it
+	if (empty($sig['hashes']['hooks/voipfirewalld'])) {
+		throw new \Exception("Firewalld not part of module.sig");
+	}
+
+	$fd = __DIR__."/voipfirewalld";
+
+	$fhash = hash_file('sha256', $fd);
+	if ($fhash !== $sig['hashes']['hooks/voipfirewalld']) {
+		throw new \Exception("Firewalld tampered");
+	}
+} catch (\Exception $e) {
+	print "Error: ".$e->getMessage().". Sleeping for 10 seconds and retrying start.\n";
+	sleep(10);
+	touch("/var/spool/asterisk/incron/firewall.firewall");
+	exit;
+}
+
+// Regen fail2ban conf, if we can
+if (file_exists("/var/www/html/admin/modules/sysadmin/hooks/fail2ban-generate")) {
+	`/var/www/html/admin/modules/sysadmin/hooks/fail2ban-generate`;
+	`/var/www/html/admin/modules/sysadmin/hooks/fail2ban-start`;
+}
+
+// Move the previous logfile out of the way.
+// Less verbose logging now, doesn't need to be clobbered.
+// @unlink("/tmp/firewall.log.previous");
+// rename ("/tmp/firewall.log", "/tmp/firewall.log.previous");
+// Start the daemon
+exec("nohup $fd &>> /tmp/firewall.log &");

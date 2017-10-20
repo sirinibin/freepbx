@@ -1,0 +1,161 @@
+<module>
+	<rawname>framework</rawname>
+	<modtype>framework</modtype>
+	<repo>standard</repo>
+	<name>FreePBX Framework</name>
+	<version>14.0.1.1</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>GPLv2+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<candisable>no</candisable>
+	<canuninstall>no</canuninstall>
+	<changelog>
+		*14.0.1.1* FREEPBX-15203 Fix the active count on module admin summary.
+		*14.0.1* Stable release
+		*14.0.1rc1.30* FREEPBX-15177
+		*14.0.1rc1.29* Runuser 'changes to the target users home directory'
+		*14.0.1rc1.28* FREEPBX-14745 Expose All Feature Codes in Advanced settings - codes are enabled by default
+		*14.0.1rc1.27* A trival fix for misconfigured RasPI type systems without PATH env set
+		*14.0.1rc1.26* FREEPBX-14703 - Handle yum update errors correctly
+		*14.0.1rc1.25* Minor installer fixes
+		*14.0.1rc1.24* Bump
+		*14.0.1rc1.23* FREEPBX-15088 fix login when using user manager
+		*14.0.1rc1.21* FREEPBX-14939 Add longpoll check ajax start
+		*14.0.1rc1.20* Developer Moder improvements
+		*14.0.1rc1.20* FREEPBX-15046 recursive chown blacklist
+		*14.0.1rc1.19* FREEPBX-14941 Mail wrapper setting header incorrectly
+		*14.0.1rc1.18* Change size of kvstore indexes and fix retrieve conf errors
+		*14.0.1rc1.17* FREEPBX-14934 fix broken login in rare cases
+		*14.0.1rc1.16* FREEPBX-14918 make sure asteriskcdrdb is set in install, if not then default
+		*14.0.1rc1.15* FREEPBX-14867 chown blacklist breaks chown
+		*14.0.1rc1.14* chown correction #1
+		*14.0.1rc1.13* Merge 13 into 14
+		*14.0.1rc1.12* Add view for destinations entry
+		*14.0.1rc1.10* Merge 13 into 14
+		*14.0.1rc1.9* Merge 13 release into 14
+		*14.0.1rc1.8* FREEPBX-14460 language selection not working
+		*14.0.1rc1.7* Add json stack traces
+		*14.0.1rc1.6* FREEPBX-14406: Tables created with different char sets
+		*14.0.1rc1.5* FREEPBX-14381
+		*14.0.1rc1.4* FREEPBX-14398
+		*14.0.1rc1.3* Merge 13 release into 14
+		*14.0.1rc1.2* Fix doctrine casing
+		*14.0.1rc1.1* Reference moment after ready
+		*14.0.1rc1* RC1
+		*14.0.1beta20* Merge 13 release into 14
+		*14.0.1beta19* add locking library
+		*14.0.1beta18* Update for 1702 release
+		*14.0.1beta16* Ensure update hooks are deleted
+		*14.0.1beta15* Fix issue with compressed js library
+		*14.0.1beta14* FREEPBX-14023 - Fix issues with yum updates
+		*14.0.1beta13* Merge 13 changes in
+		*14.0.1beta12* Quiet the chown during upgrades
+		*14.0.1beta11* Bad javascript new line
+		*14.0.1beta4* Testing of system updater in Module Admin
+		*14.0.1beta1* Betaing
+		*14.0.1alpha1* Inital Release
+	</changelog>
+	<description>
+		This module provides a facility to install bug fixes to the framework code that is not otherwise housed in a module
+	</description>
+	<depends>
+		<phpversion>5.6.0</phpversion>
+	</depends>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<database>
+		<table name="admin">
+			<field name="variable" type="string" length="20" default="" primarykey="true"/>
+			<field name="value" type="string" length="80" default=""/>
+		</table>
+		<table name="ampusers">
+			<field name="username" type="string" length="190" primarykey="true"/>
+			<field name="password_sha1" type="string" length="40"/>
+			<field name="extension_low" type="string" length="20" default=""/>
+			<field name="extension_high" type="string" length="20" default=""/>
+			<field name="deptname" type="string" length="20" default=""/>
+			<field name="sections" type="blob"/>
+		</table>
+		<table name="cronmanager">
+			<field name="module" type="string" length="24" default="" primarykey="true"/>
+			<field name="id" type="string" length="24" default="" primarykey="true"/>
+			<field name="time" type="string" length="5" notnull="false"/>
+			<field name="freq" type="integer" default="0"/>
+			<field name="lasttime" type="integer" default="0"/>
+			<field name="command" type="string" length="255" default=""/>
+		</table>
+		<table name="featurecodes">
+			<field name="modulename" type="string" length="50" default="" primarykey="true"/>
+			<field name="featurename" type="string" length="50" default="" primarykey="true"/>
+			<field name="description" type="string" length="200" default=""/>
+			<field name="helptext" type="string" length="250" default=""/>
+			<field name="defaultcode" type="string" length="20" notnull="false"/>
+			<field name="customcode" type="string" length="20" notnull="false"/>
+			<field name="enabled" type="boolean" default="0"/>
+			<field name="providedest" type="boolean" default="0"/>
+			<key name="enabled" type="index">
+				<column name="enabled"/>
+			</key>
+		</table>
+		<table name="freepbx_log">
+			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
+			<field name="time" type="datetime" default="0000-00-00 00:00:00"/>
+			<field name="section" type="string" length="50" notnull="false"/>
+			<field name="level" type="string" default="error"/>
+			<field name="status" type="integer" default="0"/>
+			<field name="message" type="text"/>
+			<key name="time" type="index">
+				<column name="time"/>
+				<column name="level"/>
+			</key>
+		</table>
+		<table name="freepbx_settings">
+			<field name="keyword" type="string" length="50" default="" primarykey="true"/>
+			<field name="value" type="string" length="255" notnull="false"/>
+			<field name="name" type="string" length="80" notnull="false"/>
+			<field name="level" type="boolean" default="0" notnull="false"/>
+			<field name="description" type="text" notnull="false"/>
+			<field name="type" type="string" length="25" notnull="false"/>
+			<field name="options" type="text" notnull="false"/>
+			<field name="defaultval" type="string" length="255" notnull="false"/>
+			<field name="readonly" type="boolean" default="0" notnull="false"/>
+			<field name="hidden" type="boolean" default="0" notnull="false"/>
+			<field name="category" type="string" length="50" notnull="false"/>
+			<field name="module" type="string" length="25" notnull="false"/>
+			<field name="emptyok" type="boolean" default="1" notnull="false"/>
+			<field name="sortorder" type="integer" default="0" notnull="false"/>
+		</table>
+		<table name="globals">
+			<field name="variable" type="string" length="190" primarykey="true"/>
+			<field name="value" type="string" length="255"/>
+		</table>
+		<table name="module_xml">
+			<field name="id" type="string" length="20" default="xml" primarykey="true"/>
+			<field name="time" type="integer" default="0"/>
+			<field name="data" type="blob" notnull="false"/>
+		</table>
+		<table name="modules">
+			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
+			<field name="modulename" type="string" length="50" default=""/>
+			<field name="version" type="string" length="20" default=""/>
+			<field name="enabled" type="boolean" default="0"/>
+			<field name="signature" type="blob" notnull="false"/>
+		</table>
+		<table name="notifications">
+			<field name="module" type="string" length="24" default="" primarykey="true"/>
+			<field name="id" type="string" length="24" default="" primarykey="true"/>
+			<field name="level" type="integer" default="0"/>
+			<field name="display_text" type="string" length="255" default=""/>
+			<field name="extended_text" type="blob"/>
+			<field name="link" type="string" length="255" default=""/>
+			<field name="reset" type="boolean" default="0"/>
+			<field name="candelete" type="boolean" default="0"/>
+			<field name="timestamp" type="integer" default="0"/>
+		</table>
+	</database>
+	<category>Admin</category>
+	<!-- System level bugfixes are below. These are checked by individual packages -->
+	<!-- This is processed by the command 'xmlstarlet sel -t -v 'module/bugfix [@id="FD7-23"]' module.xml' -->
+	<bugfix id='FD7-23'>http://issues.freepbx.org/browse/FD7-23</bugfix>
+</module>

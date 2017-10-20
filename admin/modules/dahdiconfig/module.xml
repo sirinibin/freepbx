@@ -1,0 +1,38 @@
+<module>
+	<rawname>dahdiconfig</rawname>
+	<repo>extended</repo>
+	<category>Connectivity</category>
+	<name>DAHDi Config</name>
+	<version>14.0.1</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<candisable>yes</candisable>
+	<canuninstall>yes</canuninstall>
+	<changelog>
+		*14.0.1* Initial Release for FreePBX 14
+	</changelog>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<depends>
+		<version>14.0.1alpha30</version>
+	</depends>
+	<menuitems>
+		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
+	</menuitems>
+	<hooks>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">startFreepbx</method>
+			<method callingMethod="postAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">postStartFreepbx</method>
+		</framework>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">stopFreepbx</method>
+		</framework>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Dahdiconfig" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+	</hooks>
+	<location>legacy</location>
+	<md5sum>legacy</md5sum>
+</module>

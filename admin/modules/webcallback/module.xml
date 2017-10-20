@@ -1,0 +1,57 @@
+<module>
+	<rawname>webcallback</rawname>
+	<name>Web Callback</name>
+	<version>13.0.11.2</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. The Web Call Me module allows you to easily add an HTML call me box
+	to your website. Visitors simply put their phone number in to be connected with you, or a specific destination. The Web Callback module allows you to specify a CID to be prepended
+	which alerts you that the call is coming from a specific callback. You can also set Dial Matches to specify which numbers users are allows to call. Once you have set your
+	destination and saved changes you will be given HTML code to paste into your website. </description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/web-callme.php</link>
+	</commercial>
+	<menuitems>
+		<webcallback>Web Callback</webcallback>
+	</menuitems>
+	<changelog>
+		*13.0.11.2* FREEPBX-15061 Multiple Web Callback can be added with same Name, FREEPBX-15063 List Web Callback and Add Web Callback option missing under Web Callback module edit layout.
+		*13.0.11.1* Internal Fixes
+		*13.0.11* PHP 5.6 Updates
+		*13.0.10* FREEBX-11725 Fix number prepend input
+		*13.0.9* Remove en_US Translations
+		*13.0.8* FREEPBX-11112
+		*13.0.7* Slideout menu
+		*13.0.6* Functionality and visual fixes on the default button
+		*13.0.5* FREEPBX-10027 URL Fix destination
+		*13.0.4* FREEPBX-9829 URL created invalid
+		*13.0.3* Invalid array loop bug
+		*13.0.2* Version bump Beta
+		*13.0.1alpha1* Visual Updates
+		*12.0.1* Zend fixes
+		*2.11.0.5* Sales page cleanup
+		*2.11.0.2* Allow override of our contact form
+		*2.11.0.1* Remove the Power by Schmooze line from images
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.19* default dial matches if none are set
+		*2.10.0.18* Packaging of ver 2.10.0.18
+		*2.10.0.17* Packaging of ver 2.10.0.17
+		*2.10.0.16* re #1305 - add num prepend
+		*2.10.0.15* Packaging of ver 2.10.0.15
+	</changelog>
+	<depends>
+        <version>13.0.6</version>
+        <phpcomponent>Zend Guard Loader</phpcomponent>
+        <phpversion>5.3.0</phpversion>
+        <module>sysadmin ge 13.0.69</module>
+	</depends>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location>release/2.11/webcallback-2.11.0.0.tgz</location>
+	<md5sum>f5f045500107bb99e5693703d195a9de</md5sum>
+</module>

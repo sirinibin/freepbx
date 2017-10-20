@@ -1,0 +1,56 @@
+<module>
+	<rawname>xmpp</rawname>
+	<repo>standard</repo>
+	<name>XMPP</name>
+	<version>14.0.1.4</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>AGPLv3</license>
+	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
+	<category>Admin</category>
+	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from your PBX be installed.</description>
+	<menuitems>
+		<xmpp needsenginedb="yes">XMPP</xmpp>
+	</menuitems>
+	<depends>
+		<phpversion>5.3.0</phpversion>
+		<module>userman ge 13.0.0</module>
+		<module>pm2 ge 13.0.3.8</module>
+	</depends>
+	<changelog>
+		*14.0.1.4* Bump version of letschat
+		*14.0.1.3* Fix userman deps
+		*14.0.1.2* PM2 updates
+		*14.0.1.1* Require PM2
+		*14.0.1* Utilize pm2
+		*14.0.1beta1* Use entirely new engine
+	</changelog>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<hooks>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="Xmpp" namespace="FreePBX\Modules">dashboardService</method>
+		</dashboard>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="delGroup" class="Xmpp" namespace="FreePBX\modules">usermanDelGroup</method>
+			<method callingMethod="addGroup" class="Xmpp" namespace="FreePBX\modules">usermanAddGroup</method>
+			<method callingMethod="updateGroup" class="Xmpp" namespace="FreePBX\modules">usermanUpdateGroup</method>
+			<method callingMethod="getExtraContactInfo" class="Xmpp" namespace="FreePBX\modules">usermanAddContactInfo</method>
+			<method callingMethod="delUser" class="Xmpp" namespace="FreePBX\modules">usermanDelUser</method>
+			<method callingMethod="addUser" class="Xmpp" namespace="FreePBX\modules">usermanAddUser</method>
+			<method callingMethod="updateUser" class="Xmpp" namespace="FreePBX\modules">usermanUpdateUser</method>
+			<method callingMethod="myShowPage" class="Xmpp" namespace="FreePBX\modules">usermanShowPage</method>
+		</userman>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Xmpp" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Xmpp" namespace="FreePBX\modules">startFreepbx</method>
+		</framework>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Xmpp" namespace="FreePBX\modules">stopFreepbx</method>
+		</framework>
+	</hooks>
+	<location>release/2.11/xmpp-2.11.0.3.tgz</location>
+	<md5sum>e784b420c579ca7a6eb51f94b616e451</md5sum>
+</module>

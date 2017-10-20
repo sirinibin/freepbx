@@ -1,0 +1,19 @@
+{
+	"name": "sangoma/portal_log_trace",
+	"description": "A logging library",
+	"homepage": "http://git.freepbx.org/projects/SHMZL/repos/portal_log_trace",
+	"license": "Commercial",
+	"authors": [
+		{
+			"name": "Bryan Walters",
+			"email": "bwalters@sangoma.com"
+		},
+		{
+			"name": "Philippe Lindheimer",
+			"email": "plindheimer@sangoma.com"
+		}
+	],
+	"autoload": {
+		"classmap": ["portal_log_trace.class.php"]
+	}
+}

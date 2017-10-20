@@ -1,0 +1,129 @@
+<module>
+	<rawname>pagingpro</rawname>
+	<repo>commercial</repo>
+	<name>Paging Pro</name>
+	<version>14.0.2.5</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Applications</category>
+	<changelog>
+		*14.0.2.4* FREEPBX-15004 Getting Whoops/Exception error
+		*14.0.2.4* FREEPBX-15172 Set dashboard notification on missing calendars
+		*14.0.2.3* FREEPBX-14860 add master cron in several places
+		*14.0.2* Merge from 13
+		*13.0.19.3* FREEPBX-13969 GUI setting for "Page Announcement" is not displayed in GUI properly
+		*13.0.19.2* FREEPBX-13988 Fix licensed functions
+		*13.0.19.1* FREEPBX-13909 Server time shown in schedule area in paging pro is actually browser time
+		*13.0.19* PHP 5.6 Update
+		*13.0.18.1* FREEPBX-13083 Unable to set Page Announcement to 'None'
+		*13.0.18* FREEPBX-13028
+		*13.0.17* Cleanup missing links
+		*13.0.16* Add sound languages: it,fr,en_GB
+		*13.0.15* Fix broken scheduled pages
+		*13.0.14* FREEPBX-12520 add maint script
+		*13.0.13* FREEPBX-9362 update underlying library for time selection
+		*13.0.12* Default auto-answer to Yes
+		*13.0.11* FREEPBX-11838 fix paging pro scheduler crons using new subsystem
+		*13.0.10* Add option to disable auto-answer
+		*13.0.9* Remove en_US Translations
+		*13.0.8* FREEPBX-8185 Make multicast inputs 1 field per ip
+		*13.0.7* FREEPBX-10393 Cannot make Paging Pro box exceeding a huge number
+		*13.0.6.1* FREEPBX-10302 Spelling
+		*13.0.6* FREEPBX-10296 Make routing hook conform to uniformity standards
+		*13.0.5* FREEPBX-10101 added system time here as well
+		*13.0.4* FREEPBX-10132 bugs
+		*13.0.3* FREEPBX-10132: Fix announcement. Add default start and end date in scheduler
+		*13.0.2* Version bump Beta
+		*13.0.1alpha2* Bugfix startup
+		*13.0.1alpha1* FreePBX 13 visual and functional migration
+		*12.0.7* FREEPBX-8622 Move answer to after the page agi so that we get all devices into the conference first
+		*12.0.6* Regression from FREEPBX-8497
+		*12.0.5* FREEPBX-8497
+		*12.0.4* FREEPBX-8351 Fix Paging Pro Scheduler UI is Awry
+		*12.0.3* Escape class
+		*12.0.2* Resolve licensing issues
+		*12.0.1* Add support for Multicast RTP (Asterisk 13 only)
+		2.11.0.8 Skinning fixes for FreePBX 12
+		2.11.0.5 Fix bug with notifications if using prepend
+		2.11.0.4 Fix scheduler when using app_meetme
+		2.11.0.3 check if func available before using
+		2.11.0.1 check if func available before using
+		2.11.0.1 Fixes issue where the page recording on a force valet or valet would keep going even after the recording was deleted.
+		2.11.0.0 Bump for 2.11
+		2.10.0.73 Fixed scheduler crash if no scheduler settings set
+	</changelog>
+	<depends>
+		<version>14.0</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>paging ge 13.0.15</module>
+	</depends>
+	<database>
+		<table name="pagingpro">
+			<field name="page_id" type="string" length="50" primaryKey="true" default=""/>
+			<field name="busypage" type="string" length="50" notnull="false"/>
+			<field name="intro_recording" type="string" length="50" notnull="false"/>
+			<field name="cid_prepend" type="string" length="50" notnull="false"/>
+			<field name="timezone" type="string" length="50" notnull="false"/>
+			<field name="autoanswer" type="boolean" default="1" notnull="false"/>
+			<field name="enable_scheduler" type="boolean" default="0" notnull="false"/>
+			<field name="enable_calendar" type="boolean" default="0" notnull="false"/>
+			<field name="calendar_id" type="string" default="100" notnull="false"/>
+			<field name="calendar_group_id" type="string" default="100" notnull="false"/>
+		</table>
+		<table name="pagingpro_core_routing">
+			<field name="route" type="string" length="25" default="" primaryKey="true"/>
+			<field name="page_id" type="string" length="50" notnull="false"/>
+		</table>
+		<table name="pagingpro_scheduler_events">
+			<field name="event_num" type="string" length="4" default=""/>
+			<field name="page_id" type="string" length="10" default=""/>
+			<field name="times" type="blob" notnull="false"/>
+		</table>
+		<table name="pagingpro_scheduler_range">
+			<field name="page_id" type="string" length="10" default=""/>
+			<field name="starttime" type="integer" notnull="false"/>
+			<field name="endtime" type="integer" notnull="false"/>
+		</table>
+		<table name="pagingpro_scheduler_exclusions">
+			<field name="page_id" type="string" length="10" default=""/>
+			<field name="time" type="integer" notnull="false"/>
+			<field name="comment" type="string" length="250" default=""/>
+		</table>
+		<table name="pagingpro_scheduler_crons">
+			<field name="page_id" type="string" length="10" default=""/>
+			<field name="cron_name" type="string" length="50" default=""/>
+			<field name="time" type="integer" notnull="false"/>
+		</table>
+	</database>
+	<hooks>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+				<method callingMethod="fwcChownFiles" class="Pagingpro">chownFreepbx</method>
+		</framework>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Pagingpro">startFreepbx</method>
+		</framework>
+</hooks>
+	<description>COMMERCIAL MODULE REQUIES A LICENSE FOR IT TO FUNCTION.	Please visit www.schmoozecom.com/oss.php.	This Module expands the normal Paging module in
+	FreePBX to add the following features:
+
+	Outbound Notifications - Enables the ability to notify a group of phone(s) when a user dials a specific number, ie: 911. Any page group can be linked in the outbound routes
+	module. When a call is placed a page will go out to the page group notifying the page group of what number was failed and what user dialed the number. Any user of the page
+	group can dial *1 to barge into the call and speak.
+
+	Valet Style Paging (Airport Style) - You can now choose to have your pages recorded and when you hang up have it send the audio file to all the devices that are part of the
+	page group. This setting is done on a per page group. You can also tell the system to only use Valet if someone dials the page group and it is in use already.
+
+	Prepend Recording - You can now have the page group weather normal or valet style play a recorded message to all participants of the page group before the pager can start
+	speaking.
+
+	Scheduled Pages - You can now define custom schedules to have the system page a group of devices and play a recording. This is a great replacement for school bell systems or lunch break buzzers.
+	</description>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<location>release/2.11/pagingpro-2.11.0.5.tgz</location>
+	<md5sum>9111dc87cd948dc53fe32155e04067fc</md5sum>
+</module>

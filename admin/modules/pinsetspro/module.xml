@@ -1,0 +1,58 @@
+<module>
+	<rawname>pinsetspro</rawname>
+	<name>Pinsets Pro</name>
+	<version>13.0.9.3</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Reports</category>
+	<repo>commercial</repo>
+	<changelog>
+		*13.0.9.3* FREEPBX-14558 Help text needs to be changed for Pinless dial option
+		*13.0.9.2* FREEPBX-14489 Field not updating under Pinless Dialing in extension" others " tab
+		*13.0.9.1* Internal Fixes
+		*13.0.9* PHP 5.6 Updates
+		*13.0.8.1* FREEPBX-13197 Fix report function, initialize variable
+		*13.0.8* FREEPBX-12903 FREEPBX-12904
+		*13.0.7* FREEPBX-12800 macro-pinsets does not work for non-cdr
+		*13.0.6* FREEPBX-11397 Pass v option to reset CDR to keep custom vars
+		*13.0.5* Remove en_US Translations
+		*13.0.4* FREEPBX-10679
+		*13.0.3* FREEPBX-9761 fix licensing
+		*13.0.2* Version bump Beta
+		*13.0.1* Visual styling changes
+		*12.0.1* Zend compatibility fixes
+		*2.11.0.11* FREEPBX-8478 - fix incorrect splice causing incorrect dialplan
+		*2.11.0.9* FREEPBX-7908 Readjust priorities
+		*2.11.0.8* Sales cleanup
+		*2.11.0.5* Add sales information
+		*2.11.0.4* Packaging of ver 2.11.0.4
+		*2.11.0.3* Packaging of ver 2.11.0.3
+		*2.11.0.2* Packaging of ver 2.11.0.2
+		*2.11.0.1* Bump for 2.11
+		*2.10.0.25* Packaging of ver 2.10.0.25
+	</changelog>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php Provides reports on calls based on the account code used</description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/pinsetpro.php</link>
+	</commercial>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>core</module>
+		<module>pinsets ge 2.11.0.9</module>
+	</depends>
+	<methods>
+		<get_config pri="750">pinsetspro_hook_pinsets_get_config</get_config>
+	</methods>
+	<menuitems>
+		<pinset_report>Pinsets Code Reports</pinset_report>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location>release/2.11/pinsetspro-2.11.0.5.tgz</location>
+	<md5sum>501d07f34a5ed2a8a75feac8ac0d41d0</md5sum>
+</module>

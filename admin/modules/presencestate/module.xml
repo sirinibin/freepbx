@@ -1,0 +1,50 @@
+<module>
+	<rawname>presencestate</rawname>
+	<repo>standard</repo>
+	<name>Presence State</name>
+	<version>14.0.1.3</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<category>Admin</category>
+	<description>Manage list of presence states.</description>
+	<menuitems>
+		<presencestate needsenginedb="yes">Presence State</presencestate>
+	</menuitems>
+	<depends>
+		<phpversion>5.3.0</phpversion>
+		<version>14.0.1rc1.2</version>
+	</depends>
+	<changelog>
+		*14.0.1.3* FREEPBX-15168
+		*14.0.1.2* Missing defaults
+		*14.0.1.1* XML database tables
+		*14.0.1* UCP 14
+	</changelog>
+	<hooks>
+		<ucp class="Ucp">
+			<method callingMethod="constructModuleConfigPages" class="Presencestate">ucpConfigPage</method>
+			<method callingMethod="addUser" class="Presencestate">ucpAddUser</method>
+			<method callingMethod="updateUser" class="Presencestate">ucpUpdateUser</method>
+			<method callingMethod="delUser" class="Presencestate">ucpDelUser</method>
+			<method callingMethod="addGroup" class="Presencestate">ucpAddGroup</method>
+			<method callingMethod="updateGroup" class="Presencestate">ucpUpdateGroup</method>
+			<method callingMethod="delGroup" class="Presencestate">ucpDelGroup</method>
+		</ucp>
+	</hooks>
+	<database>
+		<table name="presencestate_list">
+			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
+			<field name="type" type="string" length="25" notnull="false"/>
+			<field name="message" type="string" length="80" notnull="false"/>
+		</table>
+		<table name="presencestate_prefs">
+			<field name="extension" type="string" length="20" primarykey="true"/>
+			<field name="item_id" type="integer" primarykey="true"/>
+			<field name="pref" type="string" length="25" notnull="false"/>
+		</table>
+	</database>
+	<supported>
+		<version>14.0</version>
+	</supported>
+</module>

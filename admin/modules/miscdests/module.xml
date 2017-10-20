@@ -1,0 +1,35 @@
+<module>
+	<rawname>miscdests</rawname>
+	<repo>extended</repo>
+	<name>Misc Destinations</name>
+	<version>13.0.5</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<category>Applications</category>
+	<description>Allows creating destinations that dial any local number (extensions, feature codes, outside phone numbers) that can be used by other modules (eg, IVR, time conditions) as a call destination.</description>
+	<changelog>
+		*13.0.5* FREEPBX-12690 add view for destinations usage
+		*13.0.4.1* FREEPBX-14524 Setting a dial string with a leading space for Misc Destination causes dial to fail
+		*13.0.4* FREEPBX-12575
+		*13.0.3* FREEPBX-12386 fix labels, grid to bst and floating rnav
+		*13.0.2* Version bump out of Beta
+	</changelog>
+	<depends>
+		<version>13.0.191.12</version>
+	</depends>
+	<menuitems>
+		<miscdests>Misc Destinations</miscdests>
+	</menuitems>
+	<popovers>
+		<miscdests>
+			<display>miscdests</display>
+			<view>form</view>
+		</miscdests>
+	</popovers>
+	<location>release/2.11/miscdests-2.11.0.0.tgz</location>
+	<md5sum>eebecd953f09ca3f1446dc14e6dda992</md5sum>
+	<supported>
+		<version>13.0</version>
+	</supported>
+</module>

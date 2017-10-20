@@ -1,0 +1,56 @@
+<module>
+	<rawname>voicemail_report</rawname>
+	<name>Voicemail Reports</name>
+	<version>13.0.13.1</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Reports</category>
+	<description>Displays various information related to the voicemail system.</description>
+	<changelog>
+		*13.0.13.1* Internal fixes
+		*13.0.13* PHP 5.6 Updates
+		*13.0.12* Update Language
+		*13.0.11* FREEPBX-12302 add export to voicemails table
+		*13.0.10* FREEPBX-11905 push unixtime to grid
+		*13.0.9* FREEPBX-10571 remove repeat add restart button to player
+		*13.0.8* FREEPBX-11290 Fix handling of virtual extensions
+		*13.0.7* FREEPBX-11308 Indicate am/pm
+		*13.0.6* Remove en_US Translations
+		*13.0.5* FREEPBX-11191
+		*13.0.4* FREEPBX-11010 every file clicked for playback was essentially wrong
+		*13.0.3* HTML5 playback
+		*13.0.2* Version bump Beta
+		*13.0.1alpha1* Visual Changes
+		*12.0.3* Fix temporary greeting location
+		*12.0.1* Zend compatibility fixes
+		2.11.0.9 Fix wording on view FREEPBX-8327
+		2.11.0.8 Tag the Repo Correctly
+		2.11.0.7 Fix issue with max_execution_time when system has a lot of voicemails
+		2.11.0.5 FREEPBX-6101 String to Int PHP Conversion errors
+		2.11.0.4 Fix text stating save was possible
+		2.11.0.3 Fix issue where play wouldn't work after sorting columns
+		2.11.0.2 fix missing image
+		2.11.0.1 Bump for 2.11
+		2.10.0.6 Packaging of ver 2.10.0.6
+	</changelog>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/vmreport.php</link>
+	</commercial>
+	<depends>
+		<module>recordings</module>
+		<module>sysadmin ge 13.0.69</module>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+	</depends>
+	<menuitems>
+		<voicemail_report>Voicemail Reports</voicemail_report>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location>release/2.11/voicemail_report-2.11.0.4.tgz</location>
+	<md5sum>ed27f9501e8972cffdae1d05329f6bfa</md5sum>
+</module>

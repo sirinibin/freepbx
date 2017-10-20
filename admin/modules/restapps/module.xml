@@ -1,0 +1,212 @@
+<module>
+	<rawname>restapps</rawname>
+	<repo>commercial</repo>
+	<name>Phone Apps</name>
+	<version>13.0.88.5</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Admin</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. Applications using the RESTful API</description>
+	<changelog>
+		*13.0.88.4* Fix an issue with DND toggle
+		*13.0.88.3* FREEPBX-14377 Set a default prompt
+		*13.0.88.2* Logrotate fixes
+		*13.0.88* Utilize new pm2 module
+		*13.0.87* Add support for Yealink T4xS.
+		*13.0.86.17* FREEPBX-14284 Force VM refresh after VM playback
+		*13.0.86.16* Let install create the directory as the asterisk user
+		*13.0.86.15* Check for npm-cache
+		*13.0.86.12-13* Set correct permissions
+		*13.0.86.11* Use npm-cache
+		*13.0.86.10* Internal Fixes
+		*13.0.86.8* FREEPBX-13938 fix array error
+		*13.0.86.7* Remove the chown command because the hooks folder permissions are set correctly
+		*13.0.86.6* Make sure variable is correct before using it
+		*13.0.86.5* FREEPBX-13855 Regression with parking function calls causes daemon to crash
+		*13.0.86.4* FREEPBX-13639 Login REST App does not trigger a reboot on Aastra devices
+		*13.0.86.3* FREEPBX-13793 Logrotate additions
+		*13.0.86.2* one too many calls
+		*13.0.86.1* Stop old process
+		*13.0.86* Better logging and error handling
+		*13.0.85* PHP 5.6 Updates
+		*13.0.84.8* Integrate with system firewall on login
+		*13.0.84.7* Properly check parkpro for licensing
+		*13.0.84.6* Check to make sure parking is enabled correctly
+		*13.0.84.5* Remove potential crash
+		*13.0.84.4* Expansion keys support
+		*13.0.84.3* Console verbosity increases
+		*13.0.84.2* Fix missing xml fragements
+		*13.0.84.1* FREEPBX-13413 Asterisk locks up when doing reloads from GUI two or more in a row quickly
+		*13.0.84* Resolve issue with login leaving old phone registered
+		*13.0.83* FREEPBX-13165 contact search failure bug
+		*13.0.82* FREEPBX-13133 Don't fail if a user has no permissions to any conferences
+		*13.0.81* Fix handling of URL server args
+		*13.0.80* Fix contact display issues
+		*13.0.79* FREEPBX-12773 Wording in time conditions
+		*13.0.78* Make sure method exists before calling it
+		*13.0.77* Fix an issue with contactmanager details
+		*13.0.76* Add option to select Queue Agent BLF type (login/out or Pause/UnPause)
+		*13.0.75* Cleanup
+		*13.0.74* Fix pagination on some phones
+		*13.0.73* Beeps are not cool
+		*13.0.72* add Needs Reload when saving settings
+		*13.0.71* Adjust messages for FMFM and DND
+		*13.0.70* Add contact image support
+		*13.0.69* Remove ngettext
+		*13.0.68* FREEPBX-12792 Phone Apps Parking shows "%d secs" on the line
+		*13.0.67* Speed up and cleanup
+		*13.0.66* FREEPBX-12711, caching improvements
+		*13.0.65* Allow formatting of console output
+		*13.0.64* Listen for user event to restart on Asterisk 11
+		*13.0.63* usleep breaks blfs, removing
+		*13.0.62* Pause after each hint is created. Also check voicemail hints to make sure they arent in state 4
+		*13.0.60* Fix a crashing bug
+		*13.0.59* Revert Presence state blfs for now
+		*13.0.58* Fix bug in cli
+		*13.0.57* FREEPBX-12650 Dont translate Playback
+		*13.0.56* FREEPBX-12645 fix language issues with application names and inital sync
+		*13.0.55* Fix some quirks
+		*13.0.54* FREEPBX-12595 more missed strings
+		*13.0.53* Even more strings
+		*13.0.52* FREEPBX-12595 add more translatable texts
+		*13.0.51* pop textdomain not push again
+		*13.0.50* FREEPBX-12561 Cannot see personal External Contact Manager Groups in Phone Apps that were created in UCP
+		*13.0.49* Bind textdomains
+		*13.0.48* FREEPBX-12498 dont show voicemail blfs if not enabled, FREEPBX-9046 localize restapps
+		*13.0.47* FREEPBX-10512 attempt a fix for devices without linestates
+		*13.0.46* FREEPBX-12415 Fix login/logout setting rights
+		*13.0.45* FREEPBX-12435 show empty follow me groups
+		*13.0.44* Add (very) experimental support for Mitel 6873i
+		*13.0.43* Fix bug
+		*13.0.42* Fix queue hints
+		*13.0.41* FREEPBX-12420 dont doubt duplicate hints during startup
+		*13.0.40* FREEPBX-12420 attempted fix
+		*13.0.39* Determine which apps are valid per extension on the CLI
+		*13.0.38* Add BLF Debugging to the CLI
+		*13.0.37* Add a way to specify a default keyboard on phones that support it
+		*13.0.36* Automatically set linked conference for groups
+		*13.0.35* Resync BLF lights when phones are reachable
+		*13.0.34* Fixes for conferences
+		*13.0.33* Only generate 1 hint per app
+		*13.0.32* Completely re-do blf/hints
+		*13.0.31* Add a Transfer button to Contact Manager entries
+		*13.0.30* Determine buttons at end of sync
+		*13.0.29* FREEPBX-12097 Support voicemailRefresh when changing mailboxes
+		*13.0.28* Queues Agent setting not sticking
+		*13.0.27* Depend on endpoint and userman
+		*13.0.26* Remove presence tab in User Manager
+		*13.0.25* Cleanup array creation
+		*13.0.24* Remove stdclass in parking
+		*13.0.23* Small upgrade error
+		*13.0.22* More fixes to start and stop
+		*13.0.21* Add upgrade scripts to make this process go more smoothly
+		*13.0.20* Allow ability to use when not licensed
+		*13.0.19* FREEPBX-12042 fix timeconditions to work like other applications
+		*13.0.18* FREEPBX-12022 fix queues agent, FREEPBX-12034 fix call forwarding, Conferences support for linked conferences from conferencespro, Fix parking blfs, consolidate contact manager settings into one place
+		*13.0.17* FREEPBX-11996 Send Queue number when viewing queues
+		*13.0.16* FREEPBX-12002 fix BLF issues
+		*13.0.15* Fix dialing contacts
+		*13.0.14* Actually dial the conference, not the last conference
+		*13.0.13* During a migrate add all to each group
+		*13.0.12* Fixes issue during reloads
+		*13.0.11* Menu sorting and customizations
+		*13.0.10* Remove need for restapi, add fine grained settings into User Manager
+		*13.0.9* No longer require rest api. Add grandular permissions into user manager
+		*13.0.8.5* Display error from SQL
+		*13.0.8.4* Allow sending PJSIP NOTIFY for BLF
+		*13.0.8.3* FREEPBX-11749 Make protocol dynamic
+		*13.0.8.2* Remove en_US Translations
+		*13.0.8.1* Handle pagination a bit better when there are many entries in a list
+		*13.0.8* Allow logging in with different templates when using internal or external defaults
+		*13.0.7.6.1* Revert error handling
+		*13.0.7.6* FREEPBX-11023 better error handling
+		*13.0.7.5* Fix licensing issue
+		*13.0.7.4.1* Update apache ports on install
+		*13.0.7.3* FREEPBX-11394 array validation
+		*13.0.7.2* Don't update presencestate prefs when switching to the same presencestate
+		*13.0.7.1* Properly regenerate hints on Asterisk 11 and below on a reload
+		*13.0.7* Monitor changes in Endpoint Manager, to update BLFs more quickly
+		*13.0.6.5* Fix details page in Queues
+		*13.0.6.4* Optimize queue member retrieval in Queue Agents
+		*13.0.6.3* Respawn daemon if it ends unexpectedly.  Use fwconsole to stop the daemon when needed.
+		*13.0.6.2* Add a Delete button to Voicemail playback screen.
+		*13.0.6.1* Fix a minor issue with idle screen notifications.
+		*13.0.6* Add Exit button, globally, for Aastra, Yealink, and Obihai phones.
+		*13.0.5* FREEPBX-10991
+		*13.0.4.1* More new phones
+		*13.0.4* Add new Yealink phones
+		*13.0.3.6* Remove old bin
+		*13.0.3.5* Bump
+		*13.0.3.4* FREEPBX-10248 Make it obvious when Voicemail password changes are successful
+		*13.0.3.3* Fix issue when there are no e-mail addresses in contactmanager
+		*13.0.3.1* FREEPBX-9979 - Use lower minimum version for new Yealink phones
+		*13.0.3* FREEPBX-9979 - Add new models for Yealink
+		*13.0.2.1* Fix chown hooks
+		*13.0.2* Trial release with 13 support.
+		*13.0.1alpha6* Work around Yealink maximum page size limitation.
+		*13.0.1alpha5* Better handling when no contactmanager groups configured.
+		*13.0.1alpha4* Use userman module more directly, to avoid an issue with timing of loading modules.
+		*13.0.1alpha3* Fix issue with CoS where all items are disabled for a user.
+		*13.0.1alpha2* Fix authentication screen on Aastra 6863i and 6865i.
+		*13.0.1alpha1* 13 visual and functional updates
+	</changelog>
+	<depends>
+		<version>13.0.190.19</version>
+		<module>endpoint ge 13.0.70</module>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.37</module>
+		<module>userman 13.0.57</module>
+		<module>voicemail</module>
+		<module>timeconditions</module>
+		<module>contactmanager ge 13.0.30</module>
+		<module>callforward</module>
+		<module>conferences</module>
+		<module>daynight</module>
+		<module>donotdisturb</module>
+		<module>findmefollow</module>
+		<module>parking</module>
+		<module>presencestate</module>
+		<module>queues</module>
+		<module>paging</module>
+		<module>pm2 ge 13.0.3</module>
+	</depends>
+	<menuitems>
+		<restapps>Phone Apps</restapps>
+	</menuitems>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/restapps.php</link>
+	</commercial>
+	<hooks>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="delGroup" class="Restapps" namespace="FreePBX\Modules">delGroup</method>
+			<method callingMethod="addGroup" class="Restapps" namespace="FreePBX\Modules">addGroup</method>
+			<method callingMethod="updateGroup" class="Restapps" namespace="FreePBX\Modules">updateGroup</method>
+			<method callingMethod="delUser" class="Restapps" namespace="FreePBX\Modules">delUser</method>
+			<method callingMethod="addUser" class="Restapps" namespace="FreePBX\Modules">addUser</method>
+			<method callingMethod="updateUser" class="Restapps" namespace="FreePBX\Modules">updateUser</method>
+			<method callingMethod="myShowPage" class="Restapps" namespace="FreePBX\Modules">usermanShowPage</method>
+		</userman>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="Restapps" namespace="FreePBX\Modules">dashboardService</method>
+		</dashboard>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Restapps" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Restapps" namespace="FreePBX\Modules">startFreepbx</method>
+		</framework>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Restapps" namespace="FreePBX\Modules">stopFreepbx</method>
+		</framework>
+		<framework class="Reload" namespace="FreePBX">
+			<method callingMethod="postReload" class="Restapps" namespace="FreePBX\Modules">postReloadFreepbx</method>
+			<method callingMethod="preReload" class="Restapps" namespace="FreePBX\Modules">preReloadFreepbx</method>
+		</framework>
+	</hooks>
+	<supported>
+		<version>13.0</version>
+	</supported>
+</module>

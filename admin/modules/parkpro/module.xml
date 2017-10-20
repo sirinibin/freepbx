@@ -1,0 +1,110 @@
+<module>
+	<rawname>parkpro</rawname>
+	<name>Parking Pro</name>
+	<version>13.0.30.9</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+	<type>paid</type>
+	<link>//schmoozecom.com/parkpro.php</link>
+	</commercial>
+	<repo>commercial</repo>
+	<description>
+		PARK PRO - COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php - Provides Multiple Parking Lots, per extension assignment for default lots, Park and Page Announce and other advanced parking features to come
+	</description>
+	<changelog>
+		*13.0.30.9* FREEPBX-15005 Page group changing to invalid destination on submit
+		*13.0.30.8* FREEPBX-14838, FREEPBX-14861
+		*13.0.30.7* FREEPBX-14835 Park and Announce can be created with empty Park  Announce Extension field
+		*13.0.30.6* FREEPBX-14621 declare variable in scope
+		*13.0.30.5* FREEPBX-14308 Fix whoops on bulk import delete device
+		*13.0.30.4* FREEPBX-14301 Remove BLF Capabilities Options, they are always on
+		*13.0.30.3* FREEPBX-13778 "Retry" option not working
+		*13.0.30.2* FREEPBX-13884 fix function name
+		*13.0.30.1* Internal fixes
+		*13.0.30* Add bulkhandler hook
+		*13.0.29.13* FREEPBX-13460 new licensing code
+		*13.0.29.12* FREEPBX-13470 Whoops error on no lots
+		*13.0.29.11* FREEPBX-13333 Support showing slot range
+		*13.0.29.9* FREEPBX-13333 validate all input into the form correctly
+		*13.0.29.8* Fix bug in PBX 14
+		*13.0.29.7* Fix parking in Asterisk 11
+		*13.0.29.6* PJSIP bug
+		*13.0.29.5* Fix for attended transfers
+		*13.0.29.4* Another attempt at fixing FREEPBX-13294
+		*13.0.29.3* Feature Code name to 'Force Park into Private Lot'
+		*13.0.29.2* FREEPBX-13294 Fix feature codes and descriptions
+		*13.0.29.1* FREEPBX-13294 Minor fix in dialplan verbosity
+		*13.0.29* FREEPBX-13294 Fixing more bugs related to Parking
+		*13.0.28* FREEPBX-13294 fix numerous bugs by taking more control away from Asterisk
+		*13.0.27.1* length check in dialplan, cleanup, set variables per device correctly
+		*13.0.26* FREEPBX-12918 add fix for parking dependency
+		*13.0.25* FREEPBX-12918 Contining work for all scenarios
+		*13.0.24* FREEPBX-12918 Set priority so dialplan happens after
+		*13.0.23* Update Language
+		*13.0.22* FREEPBX-12612 park pro not saving extensions parking lot assignment upon initial creation
+		*13.0.21* FREEPBX-12588 Parking slots shown incorrectly
+		*13.0.20* FREEPBX-12509 Deleting Extension leaves Parking Lot Pro parking lot access entries in parkplus_device table
+		*13.0.19* Dont generate feature codes if they arent set
+		*13.0.18* Speed up reload time use dynamic hints
+		*13.0.17* Generate hints for pjsip
+		*13.0.16* FREEPBX-11867 check if parking lot is private and do appropriate checks
+		*13.0.15* FREEPBX-11808 FREEPBX-10049 Private parking lot issues
+		*13.0.14* Remove en_US Translations
+		*13.0.13* FREEPBX-11303 Repeat Park Slot on Park and Announce
+		*13.0.12* FREEI-52 Park to Assigned lot feature code
+		*13.0.11* FREEPBX-11170
+		*13.0.10* Alert Info dropdown hook
+		*13.0.9* FREEPBX-11170
+		*13.0.8* Move to slideout menu
+		*13.0.7* Remove duplicate contexts
+		*13.0.6* FREEPBX-9695 invalid loop
+		*13.0.5* Avoid potential crash
+		*13.0.4* FREEPBX-9520 Dont play the recording if silence was detected
+		*13.0.3* FREEPBX-9519 Drag and Drop issues
+		*13.0.2* Version bump Beta
+		*13.0.1alpha3* Visual Styling additions
+		*13.0.1alpha1* Visual Styling Changes
+	</changelog>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+			<link>//www.schmoozecom.com/parkpro.php</link>
+	</commercial>
+	<popoverss>
+		<pannounce>
+			<display>pannounce</display>
+			<action>add</action>
+		</pannounce>
+ 	</popoverss>
+	<depends>
+		<engine>asterisk ge 1.8</engine>
+		<version>13.0.6</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>parking ge 13.0.19.2</module>
+	</depends>
+	<menuitems>
+		<pannounce>Park and Announce</pannounce>
+	</menuitems>
+	<methods>
+		<get_config pri="250">parkpro_get_config</get_config>
+	</methods>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<hooks>
+		<core class="Core" namespace="FreePBX\modules">
+			<method callingMethod="delDevice" class="Parkpro">delDevice</method>
+		</core>
+		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
+			<method callingMethod="getHeaders" class="Parkpro">bulkhandlerGetHeaders</method>
+			<method callingMethod="import" class="Parkpro">bulkhandlerImport</method>
+			<method callingMethod="export" class="Parkpro">bulkhandlerExport</method>
+		</bulkhandler>
+	</hooks>
+	<location>release/2.11/parkpro-2.11.0.3.tgz</location>
+	<md5sum>24e17f9ef733511884ee1f4a66360f3d</md5sum>
+</module>

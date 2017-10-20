@@ -1,0 +1,33 @@
+<module>
+	<rawname>sng_mcu</rawname>
+	<name>Sangoma MCU</name>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>13.0.5</version>
+	<category>Admin</category>
+	<description>Modules to setup and manage Sangoma MCU</description>
+	<changelog>
+		*13.0.5* Add sound languages: it,fr,en_GB
+		*13.0.4* Remove en_US Translations
+		*13.0.3* FREEPBX-9951 Japanese language prompts
+		*13.0.2* Version bump Beta
+		*13.0.1alpha2* Add Spanish prompts
+		*13.0.1alpha1* Visual Updates
+		2.11.0.3 Fixes issue with multiple MCUs being setup via the module 
+		2.11.0.0 Initial Mockup
+	</changelog>
+	<depends>
+		<module>framework ge 2.11.0</module>
+		<phpversion>5.1.0</phpversion>
+	</depends>
+	<menuitems>
+		<sng_mcu>Sangoma MCU</sng_mcu>
+	</menuitems>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location>release/2.11/sng_mcu-2.11.0.1.tgz</location>
+	<md5sum>08aac480fbf7490591c9ef43cb792c21</md5sum>
+</module>

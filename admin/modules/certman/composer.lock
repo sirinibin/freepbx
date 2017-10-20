@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "0fc9fcb08b1b6e23d4c23e6743954556",
+    "content-hash": "307f9bf24619b53ba81365175af23b6f",
+    "packages": [
+        {
+            "name": "analogic/lescript",
+            "version": "0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/analogic/lescript.git",
+                "reference": "64c39d1a54f04f6b0954d2e71cbf4bff72a02ddd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/analogic/lescript/zipball/64c39d1a54f04f6b0954d2e71cbf4bff72a02ddd",
+                "reference": "64c39d1a54f04f6b0954d2e71cbf4bff72a02ddd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-openssl": "*",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "psr/log": "^1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Lescript.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Stanislav Humplik",
+                    "email": "sh@analogic.cz",
+                    "homepage": "https://analogic.cz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Lescript is simplified concept of ACME client implementation especially for Let's encrypt service. It's goal is to have one easy to use PHP file without dependencies.",
+            "keywords": [
+                "ACME",
+                "encryption",
+                "letsencrypt"
+            ],
+            "time": "2016-08-05 13:48:16"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

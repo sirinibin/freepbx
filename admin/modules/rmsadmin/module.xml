@@ -1,0 +1,52 @@
+<module>
+	<rawname>rmsadmin</rawname>
+	<repo>commercial</repo>
+	<name>Remote Monitoring Service</name>
+	<version>13.0.14.1</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>paid</type>
+		<link>//www.freepbx.org/rms</link>
+	</commercial>
+	<changelog>
+		*13.0.14.1* Fix OOBE bug presenting OOBE to existing active users
+		*13.0.13* Add oobe for trial offering and integrate node key with pbx license
+		*13.0.12* FREEPBX-14224 Fix critical bug that would corrupt asterisk.conf files that used both => and = as parameter separator characters at the same time
+		*13.0.11* Format alarm dates to use local time zone
+		*13.0.10* Fix module name causing kvstore errors on FreePBX 14
+		*13.0.9* Fix progress bar during updates showing 100% all the time
+		*13.0.8* Update hook kvstore access to work with 14 and fix alarm filtering causing some alarms to be hidden
+		*13.0.7* Bump sysadmin dependency to get better trial button and fix 32bit installer download
+		*13.0.6* Add friendly handling of backend server errors and allow to dismiss errors in general
+		*13.0.5* Fix issue with contact update when newlines are present in the form
+		*13.0.4* Add debug key and change metrics database default
+		*13.0.3* Fix installer hook issue when obfuscated
+		*13.0.2* Filter closed alerts
+		*13.0.1* Initial Release
+	</changelog>
+	<category>Admin</category>
+	<description>Remote Monitoring Service Management</description>
+	<menuitems>
+		<rmsadmin>RMS Management</rmsadmin>
+	</menuitems>
+	<depends>
+		<version>13.0.190</version>
+		<phpversion>5.3.0</phpversion>
+		<module>core ge 13.0.115</module>
+		<module>sysadmin ge 13.0.73.8</module>
+    </depends>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<hooks>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="RMSAdmin" namespace="FreePBX\modules">getDashboardSummary</method>
+		</dashboard>
+		<sysadmin class="Sysadmin" namespace="FreePBX\modules">
+			<method callingMethod="notifyOnLicenseChange" class="RMSAdmin" namespace="FreePBX\modules">updateLicense</method>
+		</sysadmin>
+	</hooks>
+	<oobe method="oobeHook" priority="4999"/>
+</module>

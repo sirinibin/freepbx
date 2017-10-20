@@ -1,0 +1,105 @@
+<module>
+	<rawname>endpoint</rawname>
+	<name>EndPoint Manager</name>
+	<version>14.0.2.5</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>setup</type>
+	<category>Settings</category>
+	<description>Endpoint Manager - COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php - Supports provisioning of devices.</description>
+	<changelog>
+		*14.0.2.5* Merge from 13
+		*14.0.2.4* Merge from 13
+		*14.0.2.3* Merge from 13
+		*14.0.2.1* FREEPBX-14389 Ensure compatibility of login/logout with blank configs on Sangoma phones for older firmware.
+		*14.0.2* UCP 14
+		*13.0.104.6.6* FREEPBX-14213, FREEPBX-14246, FREEPBX-13957, FREEPBX-13924, FREEPBX-14006  Fix XML apps on horizontal softkeys with Sangoma phones. Fix default firmware. Fix basefile whoops errors.
+		*13.0.104.6.5* Rebuild templates upon migration to XML-BLF
+		*13.0.104.6.4* Internal Fixes
+		*13.0.104.6.3* Remember tab on Sangoma template.
+		*13.0.103.1* FREEPBX-13826 - Fix Grandstream http user/pass fields. Add support for Yealink W56P. Create Aastra.cfg file even if no default template exists.
+		*13.0.102* FREEPBX-13606, FREEPBX-13794, FREEPBX-13813 - Fix XML close tags in Cisco. Set upgrade mode when using custom provision path. Add fwconsole commands.
+		*13.0.101* FREEPBX-13783 Clear old extension config when logging into a new extension via Phone Apps.
+		*13.0.100* FREEPBX-13752 - Fix voicemail key on Sangoma with no Phone Apps.
+		*13.0.99.1* FREEPBX-13606, FREEPBX-13533, FREEPBX-13648, FREEPBX-13650, FREEPBX-13652, FREEPBX-13663, FREEPBX-13677, FREEPBX-13671, FREEPBX-13728 - Sanitize closing XML on Cisco. Force http(s) for background url on Snom. Fix aastra.cfg rebuild on basefile edit. Throw error if global address is used and not set. Fix Cisco provisioning with http authentication. Support for 4 accounts on GXP-2135. Resolve mute key settings on Sangoma phones. Fix VPN showing with PJSIP multiple contacts. Fix dialplan path on Cisco Legacy Enterprise phones.
+		*13.0.98* Fix firmware to work with FreePBX 14
+		*13.0.97.9* FREEPBX-13548 FREEPBX-8535, FREEPBX-13610 - Correct Snom whoops errors. Allow Mitel BLF values.
+		*13.0.96* FREEPBX-13163 - Add authentication for HTTP and HTTPS provisioning.
+		*13.0.95.4* Global fixes
+		*13.0.95.2* FREEPBX-12545, FREEPBX-13527, FREEPBX-13528 - Correct IP address display on extension mapping. Fix whoops error with Cisco Enterprise. Fix account on extension edit hook. Fix seg fault when upgrading from 12.
+		*13.0.94* FREEPBX-13466 - Eliminate protocol on Grandstream firmware address.
+		*13.0.93.1* PHP 5.6 compatibility fixes
+		*13.0.92* FREEPBX-13456 - Eliminate protocol on Grandstream provisioning addresses.
+		*13.0.91.2* IP-269 - Fix whoops error with remote databases
+		*13.0.90* TELE-380, TELE-387, FREEPBX-13326 - Add screen saver schedule to Sangoma phones. Allow call history to be cleared on logout. Fix legacy Polycom to use correct variables.
+		*13.0.89.1* TELE-386, FREEPBX-13285, TELE-354 - Set time zone on logout. Fix whoops on admin UCP edit. Add font size to Sangoma templates.
+		*13.0.88* TELE-371, FREEPBX-13268, FREEPBX-13183, FREEPBX-11853 - Allow XML popup to be hidden. Allow variables for Polycom legacy directory file. Fix reboot on extension edit. Allow edits to label only with UCP.
+		*13.0.87.3* FREEPBX-10299
+		*13.0.86.1* FREEPBX-13141, FREEPBX-13091, FREEPBX-13043, FREEPBX-13060, FREEPBX-13040
+		*13.0.85.4* FREEPBX-13108, FREEPBX-13063 - Update destination and provision address to use global settings or custom.  URL encode variables for Sangoma phones.
+		*13.0.84.3* Rework on Installer, and auto-detect internal and external IPs if possible.
+		*13.0.83* Allow UCP for Activated users for Sangoma phones. Add backup XML server for Sangoma phones.  Add support for Ext-Name for line labels.
+		*13.0.82* Fix tone set in Aastra phones for Australia. Fix Admin UCP for Sangoma Phones. Fix GXP-2140 expansion modules.
+		*13.0.81.1* Add option for remote disconnect on Sangoma phones.  Fix table issue with LED settings on Sangoma phones.
+		*13.0.80* Fix reboot and check for update keys on Sangoma phones in extension mapping.
+		*13.0.79* Add support for ringtones and fix reboot on logout/login.
+		*13.0.78* Add S-D345.
+		*13.0.77* Fix S-D765 background and key count.  Add support for contact images to Sangoma phones.
+		*13.0.76* Url encode value on Sangoma phones.  Add dial now timeout for Sangoma phones.
+		*13.0.75* Add support for Wide Labels to Sangoma phones.
+		*13.0.74* Add support for LCD Language for Sangoma phones.
+		*13.0.73* Fix Sangoma expansion modules to stop key 1 defaulting to line. Add speed dial to horizontal keys on Sangoma. Fix multiple line registrations. Fix GXV-3240 multiple sidecar issue.
+	</changelog>
+	<depends>
+		<version>13.0.42</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>core ge 12.0.37</module>
+		<module>sipsettings ge 12.0.13</module>
+		<module>framework ge 13.0.170</module>
+	</depends>
+	<methods>
+		<get_config pri="750">endpoint_core_process</get_config>
+	</methods>
+	<hooks>
+		<sysadmin class="Sysadmin" namespace="FreePBX\modules">
+			<method callingMethod="getModuleLicenseInformation" class="Endpoint" namespace="FreePBX\modules">sendModuleLicenseInformation</method>
+		</sysadmin>
+		<framework class="View" namespace="FreePBX">
+			<method callingMethod="alertInfoDrawSelect" class="Endpoint" namespace="FreePBX\modules">alertInfoDrawSelect</method>
+		</framework>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Endpoint" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Endpoint" namespace="FreePBX\modules">startFreepbx</method>
+		</framework>
+		<ucp class="Ucp">
+			<method callingMethod="constructModuleConfigPages" class="Endpoint" namespace="FreePBX\modules">ucpConfigPage</method>
+			<method callingMethod="addUser" class="Endpoint" namespace="FreePBX\modules">ucpAddUser</method>
+			<method callingMethod="updateUser" class="Endpoint" namespace="FreePBX\modules">ucpUpdateUser</method>
+			<method callingMethod="delUser" class="Endpoint" namespace="FreePBX\modules">ucpDelUser</method>
+			<method callingMethod="addGroup" class="Endpoint" namespace="FreePBX\modules">ucpAddGroup</method>
+			<method callingMethod="updateGroup" class="Endpoint" namespace="FreePBX\modules">ucpUpdateGroup</method>
+			<method callingMethod="delGroup" class="Endpoint" namespace="FreePBX\modules">ucpDelGroup</method>
+		</ucp>
+	</hooks>
+	<fileinclude>
+	    <install>functions.inc.php</install>
+	</fileinclude>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/endpoint-manager.php</link>
+	</commercial>
+	<menuitems>
+		<endpoint beta="no">EndPoint Manager</endpoint>
+	</menuitems>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<md5sum>d635a5b60a80d478f2e61cad07067d9b</md5sum>
+	<oobe method="oobeHook" priority="99" />
+</module>

@@ -1,0 +1,68 @@
+<module>
+	<rawname>extensionroutes</rawname>
+	<repo>commercial</repo>
+	<name>Extension Routes</name>
+	<version>13.0.10.4</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>free</type>
+		<link>//schmoozecom.com/extension-routing.php</link>
+	</commercial>
+	<category>Connectivity</category>
+	<description>COMMERCIAL MODULE, REQUIRES A LICENSE.
+        Allows the explicit exclusion/inclusion of extensions for each route, including calls forwarded or followme-ed from the extension</description>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>core ge 13.0.21</module>
+		<module>sysadmin ge 13.0.69</module>
+		<module>framework ge 12.0.1alpha26</module>
+	</depends>
+	<changelog>
+		*13.0.10.4* FREEPBX-14799 Issue in Oubound routes, Route settings
+		*13.0.10.3* FREEPBX-14645 the module extension routing does not honor restrictons through the follome module
+		*13.0.10.2* FREEPBX-14560 Time Match Time Zone under Outbound Routes Route settings
+		*13.0.10.1* FREEPBX-14307 - Submitting extension page edits does not refresh extension routes properly
+		*13.0.10* PHP 5.6 updates
+		*13.0.9.2* FREEPBX-11026 Calls to unknown extensions behave differently with the Extension Routes module enabled
+		*13.0.9.1* Allow processing of numbers prefixed with +
+		*13.0.8* Hide config options when adding extension
+		*13.0.7* Remove en_US Translations
+		*13.0.6* FREEPBX-9181 Add toggle buttons for routing hook
+		*13.0.5* FREEPBX-10383
+		*13.0.4.2* FREEPBX-10590
+		*13.0.4.1* FREEPBX-10256 Fix wording
+		*13.0.4* #9982 issues with blind transfers
+		*13.0.3* FREEPBX-9920 Fix invalid outbound routes views
+		*13.0.2* Version bump Beta
+		*13.0.1alpha1* Visual Styling Changes
+		*12.0.11* Retry publish
+		*12.0.10* Resolve ER_Unlicenced issue
+		*12.0.9* Proper function calls
+		*12.0.8* FREEPBX-7933, FREEPBX-7958 Extension Routes stop working if you have more than 26 outbound routes
+		*12.0.7* Final fixes for zending issues
+		*12.0.6* FREEPBX-7531 fixed in FreePBX 12
+		*12.0.4* Fix time-of-day issues
+		*12.0.3* Add Class of Service integration.
+		*12.0.1* Rewrite to work with Class of Service module.
+		*2.11.0.4* Enable access from Class of Service
+		2.11.0.3 Workaround for PHP bug where array keys that contain numbers beginning with zero are converted to integers. This causes issues if you have extension numbers starting with zero
+		2.11.0.1 #6753 mark outbound calls as EXTERNAL so that CID Cnum ALias field is not used, #6755 Duplicate routes works with Extension Routing now
+		2.11.0.1 #6696 avoid AstDB corruption
+		2.11.0.0 Bump for 2.11
+		2.10.0.7 Add check/uncheck all checkbox to extensions page
+		2.10.0.6 Fix bug with new routes not allowing extensions by default
+		2.10.0.5 Add dependency on framework version 2.10.1.2
+		2.10.0.4 Fix JS sizing code
+		2.10.0.2 Fix JS for adding inputs
+		2.10.0.1 Packaging of ver 2.10.0.1
+		*2.10.0.0* First Implementation
+	</changelog>
+	<supported>
+		<version>13.0</version>
+	</supported>
+	<location />
+	<md5sum />
+</module>

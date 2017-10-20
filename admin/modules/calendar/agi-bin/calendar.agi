@@ -1,0 +1,67 @@
+#!/usr/bin/php -q
+<?php
+$bootstrap_settings['skip_astman'] = true;
+$bootstrap_settings['include_compress'] = false;
+$restrict_mods = array('calendar' => true);
+include '/etc/freepbx.conf';
+$agidir = FreePBX::Config()->get('ASTAGIDIR');
+require_once $agidir."/phpagi.php";
+
+//TODO: just json_encode and base64 this
+$agi = new AGI();
+$calendar = FreePBX::Calendar();
+$type = $argv[1];
+$action = $argv[2];
+$id = $argv[3];
+$timezone = $argv[4];
+$true = isset($argv[5]) ? $argv[5] : '';
+$false = isset($argv[6]) ? $argv[6] : '';
+
+if($timezone != 'default') {
+	$calendar->setTimezone($timezone);
+	$agi->verbose("Setting Timezone To: ".$timezone);
+}
+
+$flag = null;
+switch($type) {
+	case "group":
+		$agi->verbose("Checking Group");
+		$flag = $calendar->matchGroup($id);
+		$agi->verbose("Group: ".($flag ? 'True' : 'False'));
+	break;
+	case "calendar":
+		$agi->verbose("Checking Calendar");
+		$flag = $calendar->matchCalendar($id);
+		$agi->verbose("Calendar: ".($flag ? 'True' : 'False'));
+	break;
+}
+
+switch($action) {
+	case "goto":
+		if($flag) {
+			$agi->verbose("Goto:".base64_decode($true));
+			$agi->exec('Goto',base64_decode($true));
+		} else {
+			$agi->verbose("Goto:".base64_decode($false));
+			$agi->exec('Goto',base64_decode($false));
+		}
+	break;
+	case "execif":
+		if($flag) {
+			$agi->verbose($app.":".base64_decode($true));
+			$agi->exec($app,base64_decode($true));
+		} else {
+			$agi->verbose($app.":".base64_decode($false));
+			$agi->exec($app,base64_decode($false));
+		}
+	break;
+	case "boolean":
+		$agi->verbose("Setting CALENDAR to:".($flag ? 'TRUE':'FALSE'));
+		$agi->set_variable("CALENDAR", ($flag ? 'TRUE':'FALSE'));
+	break;
+	case "integer":
+		$agi->verbose("Setting CALENDAR to:".($flag ? '1':'0'));
+		$agi->set_variable("CALENDAR", ($flag ? '1':'0'));
+	break;
+}
+exit();

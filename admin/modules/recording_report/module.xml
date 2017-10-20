@@ -1,0 +1,33 @@
+<module>
+	<rawname>recording_report</rawname>
+	<name>Call Recording Report</name>
+	<version>14.0.1.1</version>
+	<repo>commercial</repo>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<type>tool</type>
+	<category>Reports</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php - Displays various information related to the voicemail system. This is a non standard module and requies a license for it to work</description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/call-recording-reports.php</link>
+	</commercial>
+	<changelog>
+		*14.0.1.1* Merge from 13
+		*14.0.1* FREEPBX-14027 Add Refresh and latest buttons
+	</changelog>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 13.0.69</module>
+		<module>recordings</module>
+		<module>framework ge 13.0.1beta3.56</module>
+	</depends>
+	<menuitems>
+		<recording_report>Call Recordings</recording_report>
+	</menuitems>
+	<supported>
+		<version>14.0</version>
+	</supported>
+</module>

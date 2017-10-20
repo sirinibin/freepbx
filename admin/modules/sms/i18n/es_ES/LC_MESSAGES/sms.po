@@ -1,0 +1,140 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for sms
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-28 16:56-0700\n"
+"PO-Revision-Date: 2015-04-12 22:02+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/sms/"
+"es_ES/>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+msgid "Adaptor not loaded"
+msgstr ""
+
+msgid "Are you sure you wish to delete this conversation?"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Connectivity"
+msgstr "Conectividad"
+
+msgid "Controls"
+msgstr "Controles"
+
+#, perl-format, php-format
+msgid "Conversation Detail with %s"
+msgstr ""
+
+msgid "DID"
+msgstr "\"DID\""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "File Size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "File size is too large. Max: 1.5mb"
+msgstr ""
+
+msgid "Initiate"
+msgstr ""
+
+msgid "Last Message Date"
+msgstr "Fecha Ultimo Mensaje"
+
+msgid "Loading"
+msgstr ""
+
+msgid "Me"
+msgstr "Yo"
+
+#, perl-format
+msgid "New Message from %s"
+msgstr "Nuevo Mensaje de %s"
+
+msgid "Received"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+#, php-format
+msgid "SMS for %s"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Mensaje enviando"
+
+msgid "Send SMS"
+msgstr "Enviar SMS"
+
+msgid "Sent"
+msgstr ""
+
+msgid "Start Conversation"
+msgstr ""
+
+msgid ""
+"This module is used to configure and manage SMS chat interfaces inside of "
+"the new UCP."
+msgstr ""
+"Este modulo es usado para configurar y gestionar interfaces de chat SMS "
+"dentro del nuevo UCP."
+
+msgid "Time"
+msgstr ""
+
+msgid "To"
+msgstr "A"
+
+msgid "Unsupported file format"
+msgstr ""
+
+msgid "Unsupported file type"
+msgstr ""
+
+#~ msgid "Invalid Number"
+#~ msgstr "Numero Invalido"
+
+#~ msgid "New SMS"
+#~ msgstr "Nuevo SMS"
+
+#~ msgid "System"
+#~ msgstr "Sistema"
+
+#~ msgid "There was an error sending this message: "
+#~ msgstr "Hubo un error enviando el mensaje: "
+
+#~ msgid "Are you Sure you wish to delete this chat history?"
+#~ msgstr "Esta seguro desea eliminar esta historia de chat?"
+
+#~ msgid "Go"
+#~ msgstr "ir"
+
+#~ msgid "No Messages"
+#~ msgstr "No Mensajes"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"

@@ -1,0 +1,84 @@
+<module>
+	<rawname>sysadmin</rawname>
+	<name>System Admin</name>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>14.0.7.8</version>
+	<authentication>false</authentication>
+	<category>Admin</category>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/sys-admin-pro.php</link>
+	</commercial>
+	<description>System Administration - COMMERCIAL MODULE REQUIRES A LICENSE FOR PRO FEATURES TO BE ENABLED ABOVE THE INCLUDED FREE FEATURES. Please visit www.schmoozecom.com/oss.php System Administration - provides access to various system administration tools. This module is designed to work with some very specific distributions such as the FreePBX Distro and PBXact. There are dependencies that are not all listed in this module.xml package so the module should not be used except on the distributions that it is designed for.  </description>
+	<changelog>
+		*14.0.7.8* Ensure pnpd is started correctly
+		*14.0.7.6* Merge 13 into 14
+		*14.0.7.5* Merge 13 into 14
+		*14.0.7.4* Merge 13 into 14
+		*14.0.7.3* FREEPBX-14659 CLI License Update Shows Table Error on FreePBX 14
+		*14.0.7.2* Add WiFi and DHCP Server
+		*14.0.6.3* FREEI Fix automatic installations in 14
+		*14.0.6.1* Add Sangoma PnP Server
+		*14.0.5.3* Fix LetsEncrypt issues
+		*14.0.5.2* Zend speedup
+		*14.0.5* Tighten security on web access
+		*14.0.4.2* Complete testing for SNG7
+		*14.0.3.2* FREEPBX-13163 - Add http authentication for Provisioning.
+		*14.0.2.2* Inital Release
+	</changelog>
+	<depends>
+		<module>framework ge 13.0.188.3</module>
+		<module>core ge 13.0.27</module>
+		<phpversion>5.6.0</phpversion>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<file>/usr/sbin/incrond</file>
+	</depends>
+	<menuitems>
+		<sysadmin>System Admin</sysadmin>
+	</menuitems>
+	<bootstrap_hooks>
+		<pre_module_load>
+			<all_mods>modules/sysadmin/agi-bin/LoadLicenseIfExists.php</all_mods>
+		</pre_module_load>
+	</bootstrap_hooks>
+	<supported>
+		<version>14.0</version>
+	</supported>
+	<hooks>
+		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
+			<method callingMethod="getSummary" class="Sysadmin" namespace="FreePBX\modules">dashboardService</method>
+		</dashboard>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Sysadmin" namespace="FreePBX\modules">startFreepbx</method>
+		</framework>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Sysadmin" namespace="FreePBX\modules">chownFreepbx</method>
+		</framework>
+		<userman class="Userman" namespace="FreePBX\modules">
+			<method callingMethod="myShowPage" class="Sysadmin" namespace="FreePBX\modules">usermanShowPage</method>
+			<method callingMethod="addUser" class="Sysadmin" namespace="FreePBX\modules">usermanAddUser</method>
+			<method callingMethod="updateUser" class="Sysadmin" namespace="FreePBX\modules">usermanUpdateUser</method>
+			<method class="Sysadmin" namespace="FreePBX\modules" callingMethod="addGroup">usermanAddGroup</method>
+			<method class="Sysadmin" namespace="FreePBX\modules" callingMethod="updateGroup">usermanUpdateGroup</method>
+		</userman>
+		<userman class="Certman" namespace="FreePBX\modules">
+			<method callingMethod="updateCertificate" class="Sysadmin" namespace="FreePBX\modules">updateCertManCert</method>
+		</userman>
+		<ucp class="Ucp">
+			<method callingMethod="constructModuleConfigPages" class="Sysadmin" namespace="FreePBX\modules">ucpConfigPage</method>
+			<method callingMethod="addUser" class="Sysadmin" namespace="FreePBX\modules">ucpAddUser</method>
+			<method callingMethod="updateUser" class="Sysadmin" namespace="FreePBX\modules">ucpUpdateUser</method>
+			<method callingMethod="delUser" class="Sysadmin" namespace="FreePBX\modules">ucpDelUser</method>
+			<method callingMethod="addGroup" class="Sysadmin" namespace="FreePBX\modules">ucpAddGroup</method>
+			<method callingMethod="updateGroup" class="Sysadmin" namespace="FreePBX\modules">ucpUpdateGroup</method>
+			<method callingMethod="delGroup" class="Sysadmin" namespace="FreePBX\modules">ucpDelGroup</method>
+		</ucp>
+		<framework class="Motd" namespace="FreePBX\Console\Command">
+			<method callingMethod="externalMessages" class="Sysadmin" namespace="FreePBX\modules">updateMessages</method>
+		</framework>
+	</hooks>
+	<oobe method="oobeHook" priority="90" />
+</module>

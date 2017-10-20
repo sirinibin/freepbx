@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Can we ask httpd to restart?
+
+# We do this because systemd insists on doing a
+# graceful shutdown, when that's the exact opposite of what
+# we want.  So if we can ask httpd ourselves, we avoid
+# systemd.  Sigh.
+if [ -x /usr/sbin/httpd ]; then
+	/usr/sbin/httpd -k restart
+else
+	service httpd restart
+fi

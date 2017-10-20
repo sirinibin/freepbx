@@ -1,0 +1,59 @@
+#!/usr/bin/php -q
+<?php
+
+require '/usr/lib/sysadmin/includes.php';
+error_reporting(E_ALL);
+
+$db = \Sysadmin\FreePBX::Database();
+$r = $db->query("SELECT * FROM sysadmin_options")->fetchAll();
+$s = array();
+foreach ($r as $row) {
+	$s[$row['key']] = $row['value'];
+}
+
+if (strpos("/", $s['tz_continent']) !== false || strpos("/", $s['tz_region']) !== false) {
+	print "Invalid region\n";
+	exit;
+}
+
+if ($s['tz_continent'] == "UTC") {
+	$zone = "UTC";
+} else {
+	$zone = $s['tz_continent']."/".$s['tz_region'];
+}
+
+$src = "/usr/share/zoneinfo/$zone";
+
+if (!file_exists($src)) {
+	print "Unknown region $src\n";
+}
+
+// Is it already a link? If so, link it back
+if (is_link("/etc/localtime")) {
+	@unlink("/etc/localtime");
+	symlink($src, "/etc/localtime");
+} else {
+	@unlink("/etc/localtime");
+	copy($src, "/etc/localtime");
+}
+
+// Write out the new sysconfig/clock file
+$clock = "ZONE=$zone\n";
+if ($zone == "UTC") {
+	$clock .= "UTC=true\n";
+}
+
+file_put_contents("/etc/sysconfig/clock", $clock);
+
+// update setting in php.ini
+$ini = file_get_contents("/etc/php.ini");
+
+$tzline = "date.timezone = \"$zone\" ;;;; Automatically updated by Sysadmin";
+
+// Replace the date.timezone line
+$ini = preg_replace('/^;*date.timezone.+$/m', $tzline, $ini);
+
+file_put_contents("/etc/php.ini", $ini);
+
+//Restarting apache during upgrades is bad
+//system('/etc/init.d/httpd restart');
