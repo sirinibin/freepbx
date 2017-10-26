@@ -157,7 +157,9 @@ class AGI_AsteriskManager {
 	public $log_level;
 
 	public $useCaching = false;
-	public $memAstDB = null;
+
+	private $memAstDB = array();
+	private $memAstDBArray = array();
 
 	/**
 	* Constructor
@@ -202,10 +204,14 @@ class AGI_AsteriskManager {
 	}
 
 	function LoadAstDB(){
-		if ($this->memAstDB != null) {
-			unset($this->memAstDB);
+		if (!empty($this->memAstDB)) {
+			$this->memAstDB = array();
 		}
 		$this->memAstDB = $this->database_show();
+	}
+
+	function getDBCache() {
+		return $this->memAstDB;
 	}
 
 	/**
@@ -876,8 +882,11 @@ class AGI_AsteriskManager {
 	* @param string $variable
 	* @param string $actionid message matching variable
 	*/
-	function GetVar($channel, $variable, $actionid=NULL) {
-		$parameters = array('Channel'=>$channel, 'Variable'=>$variable);
+	function GetVar($channel=null, $variable, $actionid=NULL) {
+		$parameters = array('Variable'=>$variable);
+		if(!empty($channel)) {
+			$parameters['Channel'] = $channel;
+		}
 		if($actionid) {
 			$parameters['ActionID'] = $actionid;
 		}
@@ -1493,7 +1502,12 @@ class AGI_AsteriskManager {
 	* @return Array associative array of key=>value
 	*/
 	function database_show($family='') {
-		if ($this->useCaching && $this->memAstDB != null) {
+		if ($this->useCaching) {
+			if(empty($this->memAstDB)) {
+				//blow away sub as well
+				$this->memAstDBArray = array();
+				$this->memAstDB = $this->parseAsteriskDatabase();
+			}
 			if ($family == '') {
 				return $this->memAstDB;
 			} else {
@@ -1517,7 +1531,12 @@ class AGI_AsteriskManager {
 					return $fam_arr;
 				}
 			}
+		} else {
+			return $this->parseAsteriskDatabase($family);
 		}
+	}
+
+	private function parseAsteriskDatabase($family='') {
 		$r = $this->command("database show $family");
 
 		$data = explode("\n",$r["data"]);
@@ -1553,9 +1572,7 @@ class AGI_AsteriskManager {
 				$this->memAstDB[$keyUsed] = $value;
 				$write_through = true;
 			}
-			if(isset($this->memAstDBArray[$keyUsed])) {
-				unset($this->memAstDBArray[$keyUsed]);
-			}
+			$this->memAstDBArray = array();
 		} else {
 			$write_through = true;
 		}
@@ -1574,7 +1591,7 @@ class AGI_AsteriskManager {
 	 */
 	function database_get($family, $key) {
 		if ($this->useCaching) {
-			if ($this->memAstDB == null) {
+			if (empty($this->memAstDB)) {
 				$this->LoadAstDB();
 			}
 			$keyUsed="/".str_replace(" ","/",$family)."/".str_replace(" ","/",$key);
@@ -1603,9 +1620,7 @@ class AGI_AsteriskManager {
 		if ($status && !empty($this->memAstDB)){
 			$keyUsed="/".str_replace(" ","/",$family)."/".str_replace(" ","/",$key);
 			unset($this->memAstDB[$keyUsed]);
-			if(isset($this->memAstDBArray[$keyUsed])) {
-				unset($this->memAstDBArray[$keyUsed]);
-			}
+			$this->memAstDBArray = array();
 		}
 		return $status;
 	}
@@ -1623,9 +1638,7 @@ class AGI_AsteriskManager {
 				$reg = preg_quote($keyUsed,"/");
 				if(preg_match("/^".$reg.".*/",$key)) {
 					unset($this->memAstDB[$key]);
-					if(isset($this->memAstDBArray[$key])) {
-						unset($this->memAstDBArray[$key]);
-					}
+					$this->memAstDBArray = array();
 				}
 			}
 		}
@@ -1752,9 +1765,71 @@ class AGI_AsteriskManager {
 	 *
 	 * @return array returns a key => val array
 	 */
+	function PJSIPShowEndpoints() {
+		$this->add_event_handler("endpointlist", array($this, 'Endpoints_catch'));
+		$this->add_event_handler("endpointlistcomplete", array($this, 'Endpoints_catch'));
+		$response = $this->send_request('PJSIPShowEndpoints');
+		if ($response["Response"] == "Success") {
+			$this->wait_response(true);
+			stream_set_timeout($this->socket, 30);
+		} else {
+			return false;
+		}
+		$res = $this->response_catch;
+		// Asterisk 12 can sometimes dump extra garbage after the
+		// output of this. So grab it, and discard it, if it's
+		// pending.
+		// Note that this has been reported as a bug and should
+		// be removed, or, wait_response needs to be re-written
+		// to keep waiting until it receives the ending event
+		// https://issues.asterisk.org/jira/browse/ASTERISK-24331
+		usleep(1000);
+		stream_set_blocking($this->socket, false);
+		while (fgets($this->socket)) { /* do nothing */ }
+		stream_set_blocking($this->socket, true);
+		unset($this->event_handlers['endpointlist']);
+		unset($this->event_handlers['endpointlistcomplete']);
+		return $res;
+	}
+
+	function PJSIPShowRegistrationInboundContactStatuses() {
+		$this->add_event_handler("contactstatusdetail", array($this, 'Contacts_catch'));
+		$this->add_event_handler("contactstatusdetailcomplete", array($this, 'Contacts_catch'));
+		$response = $this->send_request('PJSIPShowRegistrationInboundContactStatuses');
+		if ($response["Response"] == "Success") {
+			$this->wait_response(true);
+			stream_set_timeout($this->socket, 30);
+		} else {
+			return false;
+		}
+		$res = $this->response_catch;
+		// Asterisk 12 can sometimes dump extra garbage after the
+		// output of this. So grab it, and discard it, if it's
+		// pending.
+		// Note that this has been reported as a bug and should
+		// be removed, or, wait_response needs to be re-written
+		// to keep waiting until it receives the ending event
+		// https://issues.asterisk.org/jira/browse/ASTERISK-24331
+		usleep(1000);
+		stream_set_blocking($this->socket, false);
+		while (fgets($this->socket)) { /* do nothing */ }
+		stream_set_blocking($this->socket, true);
+		unset($this->event_handlers['contactstatusdetail']);
+		unset($this->event_handlers['contactstatusdetailcomplete']);
+		return $res;
+	}
+
+	/**
+	 * PJSIPShowEndpoint
+	 * @param string $channel
+	 *
+	 * @return array returns a key => val array
+	 */
 	function PJSIPShowEndpoint($dev) {
-		 $this->add_event_handler("endpointdetail", array($this, 'Endpoint_catch'));
-		 $this->add_event_handler("authdetail", array($this, 'Endpoint_catch'));
+		$this->add_event_handler("endpointdetail", array($this, 'Endpoint_catch'));
+		$this->add_event_handler("authdetail", array($this, 'Endpoint_catch'));
+		$this->add_event_handler("transportdetail", array($this, 'Endpoint_catch'));
+		$this->add_event_handler("identifydetail", array($this, 'Endpoint_catch'));
 		$this->add_event_handler("endpointdetailcomplete", array($this, 'Endpoint_catch'));
 		$params = array("Endpoint" => $dev);
 		$response = $this->send_request('PJSIPShowEndpoint', $params);
@@ -1778,8 +1853,38 @@ class AGI_AsteriskManager {
 		stream_set_blocking($this->socket, true);
 		unset($this->event_handlers['endpointdetail']);
 		unset($this->event_handlers['authdetail']);
+		unset($this->event_handlers['transportdetail']);
+		unset($this->event_handlers['identifydetail']);
 		unset($this->event_handlers['endpointdetailcomplete']);
 		return $res;
+	}
+
+	/**
+	* Catcher for the pjsip events
+	*
+	*/
+	private function Contacts_catch($event, $data, $server, $port) {
+		switch($event) {
+			case 'contactstatusdetailcomplete':
+				stream_set_timeout($this->socket, 0, 1);
+				break;
+			default:
+				$this->response_catch[] =  $data;
+		}
+	}
+
+	/**
+	* Catcher for the pjsip events
+	*
+	*/
+	private function Endpoints_catch($event, $data, $server, $port) {
+		switch($event) {
+			case 'endpointlistcomplete':
+				stream_set_timeout($this->socket, 0, 1);
+				break;
+			default:
+				$this->response_catch[] =  $data;
+		}
 	}
 
 	/**

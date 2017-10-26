@@ -69,7 +69,7 @@ class Cron {
 	 * @return array Crontab lines for user
 	 */
 	public function getAll() {
-		exec('/usr/bin/crontab '.$this->uoption.' -l 2>&1', $output, $ret);
+		exec('/usr/bin/crontab '.$this->uoption.' -l 2>/dev/null', $output, $ret);
 		// Linux output
 		if (preg_match('/^no crontab for/', $output[0]))
 			return array();
@@ -248,6 +248,9 @@ class Cron {
 	 * @param {array} $arr The array of elements to add
 	 */
 	private function installCrontab($arr) {
+		if(!file_exists('/tmp/cron.error')) {
+			touch('/tmp/cron.error');
+		}
 		// Run crontab, hand it the array as stdin
 		$fds = array( array('pipe', 'r'), array('pipe', 'w'), array('file', '/tmp/cron.error', 'a') );
 		$rsc = proc_open('/usr/bin/crontab '.$this->uoption.' -', $fds, $pipes);

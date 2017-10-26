@@ -1,8 +1,8 @@
-(25 Oct 2017 15:04:11)-[DEBUG]: Starting CXPanel module
-(25 Oct 2017 15:04:11)-[DEBUG]: Checking manager connection
-(25 Oct 2017 15:04:11)-[DEBUG]: Agent login context: from-queue
-(25 Oct 2017 15:04:11)-[DEBUG]: Agent interface type: peer
-(25 Oct 2017 15:04:11)-[DEBUG]: Parking lot timeout: 200
-(25 Oct 2017 15:04:11)-[DEBUG]: Creating contexts ContextPrefix:c-x-3-operator-panel VariablePrefix:XMLNamespace
-(25 Oct 2017 15:04:11)-[DEBUG]: Executing modify.php
-(25 Oct 2017 15:04:11)-[DEBUG]: Total Running Time:0.042776107788086s
+(26 Oct 2017 00:10:16)-[DEBUG]: Starting CXPanel module
+(26 Oct 2017 00:10:16)-[DEBUG]: Checking manager connection
+(26 Oct 2017 00:10:16)-[DEBUG]: Agent login context: from-queue
+(26 Oct 2017 00:10:16)-[DEBUG]: Agent interface type: peer
+(26 Oct 2017 00:10:16)-[DEBUG]: Parking lot timeout: 200
+(26 Oct 2017 00:10:16)-[DEBUG]: Creating contexts ContextPrefix:c-x-3-operator-panel VariablePrefix:XMLNamespace
+(26 Oct 2017 00:10:16)-[DEBUG]: Executing modify.php
+(26 Oct 2017 00:10:16)-[DEBUG]: Total Running Time:0.053268194198608s

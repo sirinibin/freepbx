@@ -3,13 +3,30 @@
 	<modtype>framework</modtype>
 	<repo>standard</repo>
 	<name>FreePBX Framework</name>
-	<version>14.0.1.1</version>
+	<version>14.0.1.19</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv2+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<changelog>
+		*14.0.1.19* Fix fwconsole m to detect tty or not
+		*14.0.1.18* Remove default on freepbx_log table
+		*14.0.1.16* FREEPBX-15800 FREEPBX-15944
+		*14.0.1.15* Support Asterisk 15
+		*14.0.1.14* fix issue with undefined newvers
+		*14.0.1.13* Fixes to system upgrades page
+		*14.0.1.12* FREEPBX-14185 wrong permissions on single files
+		*14.0.1.11* FREEPBX-15944 Errors during CLI installation
+		*14.0.1.10* Adjust Asterisk Manager Caching
+		*14.0.1.9* FREEPBX-15692
+		*14.0.1.8* Fixed bug in installer
+		*14.0.1.7* FREEPBX-15592
+		*14.0.1.6* FREEPBX-15369
+		*14.0.1.5* Enable caching
+		*14.0.1.4* Remove res_digium_phones from noload even if pjsip is disabled
+		*14.0.1.3* Remove res_digium_phones from noload
+		*14.0.1.2* FREEPBX-15283 FREEPBX-15364
 		*14.0.1.1* FREEPBX-15203 Fix the active count on module admin summary.
 		*14.0.1* Stable release
 		*14.0.1rc1.30* FREEPBX-15177
@@ -100,7 +117,7 @@
 		</table>
 		<table name="freepbx_log">
 			<field name="id" type="integer" primarykey="true" autoincrement="true"/>
-			<field name="time" type="datetime" default="0000-00-00 00:00:00"/>
+			<field name="time" type="datetime"/>
 			<field name="section" type="string" length="50" notnull="false"/>
 			<field name="level" type="string" default="error"/>
 			<field name="status" type="integer" default="0"/>
